@@ -1,15 +1,13 @@
 
 .MainLoginBox{
     height: 30%;
-    width: 400px;
+    width: 370px;
     float: right;
-    margin: auto;
-
 }
 
 .LoginDiv{
     width: 100%;
-    height: 75%;
+    height: 70%;
     border: 1px solid rgb(197, 196, 196);
 
 }
@@ -95,4 +93,40 @@ button{
     text-decoration: none;
 }
 
+.stores{
+    align-items: center;
+}
+.stores img{
+    height: 40px;
+    width: 120px;
+    float: left;
+    margin-left: 40px;
+    border: 1px solid black;
+}
 
+/* side image */
+
+.mainComponent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+}
+
+.sideImg{
+    height: 100%;
+    width: 350px;
+    display: block;
+    float: left;
+
+
+}
+
+.Img{
+    height: 480px;
+    width: 100%;
+    display: block;
+ 
+}
