@@ -1,0 +1,98 @@
+
+.MainLoginBox{
+    height: 30%;
+    width: 400px;
+    float: right;
+    margin: auto;
+
+}
+
+.LoginDiv{
+    width: 100%;
+    height: 75%;
+    border: 1px solid rgb(197, 196, 196);
+
+}
+
+.IgLogo{
+    font-size: 40px;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+
+input{
+    height: 35px;
+    width: 80%;
+    padding-left: 5px;
+    margin-bottom: 5px;
+    border: 1px solid  rgb(197, 196, 196);
+    border-radius: 5px;
+    background-color: rgb(247, 245, 245);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button{
+    height: 35px;
+    width: 80%;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: rgb(92, 196, 231);
+    display: block;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.or{
+    text-align: center;
+    color: gray;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.FacebookLink{
+    color: rgb(98, 98, 226);
+    text-align: center;
+    display: block;
+    font-weight: bold;
+    font-size: 14px;
+    text-decoration: none;
+    margin-top: 30px;
+}
+
+.ForgotPassLink{
+    color: rgb(98, 98, 226);
+    text-align: center;
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.SignupBox{
+    padding: 7px;
+    margin-top: 10px;
+    border: 1px solid rgb(197, 196, 196);
+}
+
+.SignupBox p{
+    text-align: center;
+    color: gray;
+    font-size: 14px;
+}
+
+.gotoSignup{
+    color:  rgb(92, 196, 231);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
