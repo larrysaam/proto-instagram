@@ -1,7 +1,7 @@
 
 .MainLoginBox{
     height: 30%;
-    width: 370px;
+    width: 350px;
     float: right;
 }
 
@@ -12,11 +12,12 @@
 
 }
 
-.IgLogo{
-    font-size: 40px;
-    text-align: center;
-    font-weight: bold;
-    margin-bottom: 50px;
+#IgLogo{
+    display: flex;
+    align-items: center;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 input{
@@ -96,12 +97,10 @@ button{
 .stores{
     align-items: center;
 }
-.stores img{
-    height: 40px;
-    width: 120px;
-    float: left;
-    margin-left: 40px;
-    border: 1px solid black;
+.stores{
+    display: flex;
+    align-items: center;
+    margin: auto;
 }
 
 /* side image */
@@ -113,19 +112,20 @@ button{
     height: 100%;
     width: 100%;
     margin: auto;
+    line-height: 100%;
 }
 
 .sideImg{
     height: 100%;
-    width: 350px;
+    width: 370px;
     display: block;
     float: left;
-
+    margin-right: 40px;
 
 }
 
 .Img{
-    height: 480px;
+    height: 600px;
     width: 100%;
     display: block;
  
