@@ -1,0 +1,156 @@
+#sugestionBox{
+    height: 100%;
+    width: 37%;
+    display: block;
+    float: right;
+}
+
+.profile{
+    width: 80%;
+    height: 80px;
+    margin-top: 40px;
+    padding-left:30px;
+    padding-right: 30px;
+    float: left;
+    display: inline-flex;
+    cursor: pointer;
+    position: relative;
+}
+
+.profileImg{
+    height: 60px;
+    width: 60px;
+    border-radius: 30px;
+    margin-top: 10px;
+}
+
+.userNames{
+    height: 70px;
+    float: left;
+    margin-left: -5vh;
+}
+
+.userNames li{
+    font-size: 14px;
+    list-style: none;
+}
+
+.profileName{
+    font-weight: bold;
+    color: white;
+}
+
+.userName{
+    color: rgb(184, 182, 182);
+}
+
+
+#switchBtn{
+    line-height: 70px;
+    background: none;
+    border: none;
+    color: rgb(26, 119, 224);
+    font-weight: bold;
+    font-size: 12px;
+    float: right;
+    position: absolute;
+    right: 100px;
+}
+
+
+
+/* suggestions */
+.sugestionDiv{
+    width: 75%;
+    height: 100%;
+    float: left;
+    display: inline-flex;
+    position: relative;
+}
+
+.sugestionDiv ul{
+    width: 100%;
+    height: 100%;
+    margin-top: 0px;
+}
+
+#seeAll{
+    line-height: 50px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 12px;
+    float: right;
+    right: 0px;
+}
+
+#followBtn{
+    line-height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color:  rgb(26, 119, 224);
+    font-weight: bold;
+    font-size: 14px;
+    float: right;
+    right: 0px;
+}
+
+.userNames li{
+    color: white;
+    list-style: none;
+    font-size: 14px;
+
+}
+
+.sugProfileImg{
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+}
+
+.sugestion{
+    width: 100%;
+    margin-bottom: 15px;
+    float: left;
+    display: inline-flex;
+    cursor: pointer;
+}
+
+.sugestion p{
+    font-size: 14px;
+    font-weight: bold;
+    color: rgb(184, 182, 182);
+}
+
+
+/* footer */
+
+.sugFooter{
+    margin-top: 20px;
+    float: left;
+}
+
+.sugFooter ul{
+    float: left;
+    display: inline;
+    padding: 0px;
+    margin-bottom: 20px;
+}
+
+.sugFooter ul li{
+    display: inline-block;
+    color: rgb(184, 182, 182) ;
+    margin-right: 10px;
+}
+
+.sugFooter ul li a{
+    text-decoration: none;
+    color:rgb(184, 182, 182) ;
+}
+
+.sugFooter p{
+    color:rgb(184, 182, 182) ;
+}
