@@ -1,0 +1,44 @@
+.homeDiv{
+    height: 100%;
+    position: relative;
+}
+
+#nav{
+    float: left;
+    height: 100%;
+    width: 20%;
+    : 0px;
+    background-color: black;
+}
+
+.logoimg{
+
+    margin-left: 35px;
+    margin-top: 60px;
+    margin-bottom: 20px;
+}
+
+.NavLink{
+    display: block;
+    text-decoration: none;
+    list-style: none;
+    color: white;
+    text-align: center;
+}
+
+.NavList li{
+    margin-bottom: 20px;
+    align-items: center;
+    display: flex;
+    text-align: center;
+}
+
+.NavList img{
+    margin-right: 10px;
+}
+
+
+.more{
+    position: absolute;
+    bottom: 0;
+}
