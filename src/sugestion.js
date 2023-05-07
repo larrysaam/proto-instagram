@@ -2,28 +2,39 @@ import './sugestion.css';
 
 const Sugestion = ({profileImg, userName}) =>{
 
-    var date = Date.now();
+    var date =new Date().getFullYear();
 
     return(
         <div id="sugestionBox">
+
+            {/* profile */}
             <div className="profile">
                 <img src={profileImg} alt="" className="profileImg"/>
                 <ul className="userNames" >
                     <li className="profileName"> larriensaams</li>
                     <li className="userName">Larrien saams</li>
                 </ul>
-                <form>
-                    <button type="submit" id="switchBtn">Switch</button>
-                </form>
+                
+                <button type="submit" id="switchBtn" onAction="SwitchAccount()">Switch</button>
             </div>
+
+            {/* suggestion */}
             <div className="sugestionDiv">
                 <ul>
                     <li style={{listStyle:"none"}}>
                         <p style={{float:"left", color:"white"}}>Suggested for you</p>
-                        <form>
-                            <button type="submit" id="seeAll">See ALL</button>
-                        </form>
+                        <button type="submit" id="seeAll" onAction="SeeAllSug()">See ALL</button>
                     </li>
+
+                    <li className="sugestion">
+                        <img src={profileImg} alt="" className="sugProfileImg"/>
+                        <ul className="userNames">
+                            <li className="profileName"> larriensaams</li>
+                            <li className="userName">Instagram recommended</li>
+                        </ul>
+                            <button type="submit" id="followBtn" value={userName} onAction="FollowAccount(e)">Follow</button>
+                    </li>
+
                     <li className="sugestion">
                         <img src={profileImg} alt="" className="sugProfileImg"/>
                         <ul className="userNames">
@@ -31,21 +42,13 @@ const Sugestion = ({profileImg, userName}) =>{
                             <li className="userName">Instagram recommended</li>
                         </ul>
                         <form>
-                            <button type="submit" id="followBtn" value={userName}>Follow</button>
+                            <button type="submit" id="followBtn" value={userName} onAction="FollowAccount(e)">Follow</button>
                         </form>
                     </li>
-                    <li className="sugestion">
-                        <img src={profileImg} alt="" className="sugProfileImg"/>
-                        <ul className="userNames">
-                            <li className="profileName"> larriensaams</li>
-                            <li className="userName">Instagram recommended</li>
-                        </ul>
-                        <form>
-                            <button type="submit" id="followBtn" value={userName}>Follow</button>
-                        </form>
-                    </li>
-                                {/* footer */}
-                <div className='sugFooter'>
+
+
+                    {/* footer */}
+                    <div className='sugFooter'>
                         <ul>
                             <li><a href="#">About</a></li>
                             <li><a href="#">Help</a></li>
@@ -58,8 +61,10 @@ const Sugestion = ({profileImg, userName}) =>{
                             <li><a href="#">Language</a></li>
                             <li><a href="#">Meta Verified</a></li>
                         </ul>
-                        <p> &cpy; {date} INSTAGRAM FROM META</p>
-                </div>
+
+                        <p> &copy; {date} INSTAGRAM FROM META</p>
+                    </div>
+
                 </ul>
             </div>
         </div>

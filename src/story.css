@@ -1,0 +1,45 @@
+
+#ContentDiv{
+    float: left;
+    margin-left: 100px;
+}
+
+#StoryBox{
+    height: 120px;
+    width: 500px;
+    background-color: black;
+    border-radius: 10px;
+    border: 1px solid gray ;
+    color: white;
+}
+
+li{
+    list-style: none;
+}
+
+.storyUl{
+    padding-left: 15px;
+}
+
+.FollowerStory{
+    display: inline-block;
+}
+
+.FollowerStory ul{
+    display: inline-block;
+    text-align: center;
+    align-items: center;
+    margin: auto;
+}
+
+.FollowerStory ul li p{
+    margin-top: 2px;
+    font-size: 14px;
+}
+
+.StoryProfileImg{
+    height: 60px;
+    width: 60px;
+    border-radius: 30px;
+    border: 2px solid rgb(143, 3, 143);
+}

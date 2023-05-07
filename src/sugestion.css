@@ -1,3 +1,4 @@
+
 #sugestionBox{
     height: 100%;
     width: 37%;
@@ -66,6 +67,7 @@
     float: left;
     display: inline-flex;
     position: relative;
+    overflow: hidden;
 }
 
 .sugestionDiv ul{
