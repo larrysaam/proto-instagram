@@ -1,4 +1,6 @@
 import './story.css';
+import fruit from './fruit.png'
+import lemon from './lemon.png'
 
 const Story =()=>{
 
@@ -7,12 +9,12 @@ const Story =()=>{
         {
             userid:"123da23",
             name:"joe",
-            ProfileImage:"Joe.PNG"
+            ProfileImage:fruit
         },
         {
             userid:"5tr4523",
             name:"john",
-            ProfileImage:"john.PNG"
+            ProfileImage:lemon
         }
     ];
 
@@ -21,7 +23,7 @@ const Story =()=>{
                     <li className="FollowerStory" key={story.userid}>
                         <ul className='storyUl'>
                             <li>
-                                <img src={story.ProfileImg} alt='' className='StoryProfileImg'/>
+                                <img src={story.ProfileImage} alt='' className='StoryProfileImg'/>
                             </li>
                             <li>
                                <p> {story.name}</p>

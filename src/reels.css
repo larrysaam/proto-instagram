@@ -1,0 +1,148 @@
+.reelDiv{
+    width: 100%;
+    background-color: black;
+    border: 1px solid gray;
+    border-radius: 10px;
+    margin-top: 15px;
+    color: white;
+    font-family: sans-serif;
+}
+
+.topReelDiv{
+    width: 100%;
+    height: 60px;
+    padding-left: 10px;
+    display: inline-block;
+}
+
+.topReelDiv .profileImage{
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    border: 1px solid gray;
+    float: left;
+    margin-top: 10px;
+}
+
+.topReelDiv ul{
+    float: left;
+    padding-left: 0px;
+    margin-left: 15px;
+    
+}
+
+.topReelDiv ul li{
+    display: block;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 0px;
+
+}
+
+.topReelDiv ul .reelName{
+    font-weight: bold;
+    float: left;
+}
+
+.topReelDiv ul .reelLocation{
+    color: antiquewhite;
+
+}
+
+.topReelDiv .more{
+
+    height: 30px;
+    width: 30px;
+
+}
+
+.reelDiv .reelImage{
+    width: 100%;
+}
+
+.reelDiv .options{
+    width: 100%;
+    padding-left: 15px;
+    font-family: sans-serif;
+}
+
+.reelDiv .options ul{
+    padding-left: 0px;
+}
+
+.reelDiv .options li{
+    display: inline-block;
+}
+
+.reelDiv .options .reelOptionIcon{
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+    margin-right: 10px;
+}
+
+
+.reelDiv .options .save{
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+    margin-right: 20px;
+    float: right;
+}
+
+
+.reelDiv .options .reelLikes{
+    font-size: 14px;
+}
+
+.reelDiv .options .reelDesc{
+    font-size: 14px;
+    font-weight: lighter;
+}
+
+.reelDiv .options .viewcomments{
+    background-color: none;
+    border: none;
+    background: none;
+    color: gray;
+    padding: 0;
+}
+
+.reelDiv .options .reelDate{
+    color: gray;
+    font-size: 10px;
+}
+
+.reelDiv .addComment{
+    width: 100%;
+    padding-bottom: 5px;
+    padding-left: 10px;
+}
+
+.commentIcon{
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+
+}
+.addComment form{
+    display: flex;
+}
+
+.commentInput{
+    height: 30px;
+    width: 90%;
+    border: none;
+    background-color: black;
+    color: white;
+}
+
+.postComment{
+    background-color: none;
+    background: none;
+    border: none;
+    color: rgb(83, 114, 181);
+    font-weight: bold;
+    font-size: 14px;
+    margin-right: 20px;
+}
