@@ -10,21 +10,8 @@ import smileIcon from './smillIcon.PNG'
 
 
 
-const Reels =()=>{
+const Reels =({posts})=>{
 
-    const posts=[
-        {
-            userId: "21df903",
-            profile:profileImage,
-            name:"spacex",
-            location:"Yaounde",
-            image:Image,
-            likes:0,
-            commentnumbers:200,
-            description:"Starship liftoff in slow motion",
-            date:"APRIL 22"
-        }
-    ]
 
     let reel = posts.map(reel =>
         <div key={reel.userId} className='reelDiv'>
@@ -41,7 +28,7 @@ const Reels =()=>{
             </div>
 
             {/* image */}
-            <img src={reel.image} alt='Image is not available' className='reelImage'/>
+            <img src={Image} alt='Image is not available' className='reelImage'/>
             
             {/* options, comments and likes */}
             <div className='options'>
