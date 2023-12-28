@@ -17,9 +17,6 @@ const Reels =({reelposts})=>{
     const [icon, setIcon] = useState('');
     const [like, setLike] = useState([]);
 
-    useEffect({
-        setLike([ ])
-    },[])
 
     const likebtnClicked = ()=>{
 
