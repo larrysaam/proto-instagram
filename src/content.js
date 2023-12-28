@@ -4,11 +4,11 @@ import './story.css';
 import ApiRequest from "./apiRequest";
 import { useState, useEffect } from "react";
 
-const Content = async () =>{
+const Content = () =>{
 
-    const API_URL ="http://localhost:3500/posts";
+    const API_URL ="http://localhost:8000/posts";
 
-    const [posts, setPosts] = useState([]);
+    const [reelposts, setreelPosts] = useState([]);
 
     // loads data when browser loads only once
     useEffect(() =>{
@@ -17,12 +17,12 @@ const Content = async () =>{
                 const response = await fetch(API_URL);
                 const posts = await response.json();
                 console.log(posts);
-                setPosts(posts);
-            }catch{
+                setreelPosts(posts);
+            }catch(err){
                 console.log("err.stack");
             }
         }
-         (async () => await fetchPosts())();
+         fetchPosts();
     }, []);
 
 
@@ -41,9 +41,9 @@ const Content = async () =>{
     return(
         <div id='ContentDiv'>
             <Story />
-            <Reels posts={posts}/>
+            <Reels reelposts={reelposts}/>
         </div>
-    )
+    );
 }
 
 export default Content;

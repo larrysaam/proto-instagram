@@ -1,0 +1,26 @@
+{
+  "posts": [
+    {
+      "userId": "21df903",
+      "profile": "profileImage",
+      "name": "spacex",
+      "location": "Yaounde",
+      "image": "Image",
+      "likes": 0,
+      "commentnumbers": 200,
+      "description": "Starship liftoff in slow motion",
+      "date": "APRIL 22"
+    },
+    {
+      "userId": "343u450",
+      "profile": "profileImage",
+      "name": "nasa",
+      "location": "Douala",
+      "image": "Image",
+      "likes": 10000,
+      "commentnumbers": 220,
+      "description": "Starship liftoff in slow motion from spaceX",
+      "date": "APRIL 23"
+    }
+  ]
+}

@@ -1,7 +1,6 @@
 import Login from './login';
 import Image from './SwitchingImg';
 import {useState} from 'react';
-import './App.css';
 import './Login.css';
 
 function App() {

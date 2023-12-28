@@ -17,10 +17,11 @@
             "name":"nasa",
             "location":"Douala",
             "image":"Image",
-            "likes":10000,
+            "likes":100,
             "commentnumbers":220,
             "description":"Starship liftoff in slow motion from spaceX",
             "date":"APRIL 23"
         }
+        
     ]
 }

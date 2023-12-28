@@ -2,12 +2,18 @@
 #ContentDiv{
     float: left;
     height: 100%;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
 
     display: block;
     margin-top: 40px;
-    margin-left: 130px;
+    margin-left: 120px;
+
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+#ContentDiv::-webkit-scrollbar{
+    display: none;
 }
 
 #StoryBox{
