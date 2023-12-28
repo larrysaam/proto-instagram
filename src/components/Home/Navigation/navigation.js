@@ -1,13 +1,15 @@
-import darkLogo from './black logo.PNG';
-import homeicon from './icon.PNG';
-import real from './real.PNG';
-import messagesicon from './messagesicon.PNG';
-import search from './search.PNG';
-import explore from './explore.PNG';
-import notificon from './notificon.PNG';
-import createicon from './createicon.PNG';
-import moreicon from './moreicon.PNG';
-import './navigation.css';
+import darkLogo from '../../../assets/images/black logo.PNG';
+import homeicon from '../../../assets/images/icon.PNG';
+import real from '../../../assets/images/real.PNG';
+import messagesicon from '../../../assets/images/messagesicon.PNG';
+import search from '../../../assets/images/search.PNG';
+import explore from '../../../assets/images/explore.PNG';
+import notificon from '../../../assets/images/notificon.PNG';
+import createicon from '../../../assets/images/createicon.PNG';
+import moreicon from '../../../assets/images/moreicon.PNG';
+import '../../../style/navigation.css';
+
+
 const NavigationBar = ({profileImg}) =>{
     
     return(

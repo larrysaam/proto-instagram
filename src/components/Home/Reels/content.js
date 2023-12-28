@@ -1,7 +1,6 @@
-import Story from "./story";
-import Reels from "./reels";
-import './story.css';
-import ApiRequest from "./apiRequest";
+import Story from "../Story/story";
+import Reels from "../Reels/reels";
+import '../../../style/story.css';
 import { useState, useEffect } from "react";
 
 const Content = () =>{

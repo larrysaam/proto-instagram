@@ -1,6 +1,6 @@
-import './Login.css';
-import  instaImg from './instagram logo.PNG';
-import  storeImg from './stores.PNG';
+import '../../style/Login.css';
+import  instaImg from '../../assets/images/instagram logo.PNG';
+import  storeImg from '../../assets/images/stores.PNG';
 
 const Login = () => {
     return (

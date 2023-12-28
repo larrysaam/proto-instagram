@@ -1,13 +1,13 @@
-import './reels.css';
-import spacex from './spacex.jpg'
-import nasa from './nasa.jpg'
-import Image from './Image.PNG'
-import liked from './heart.png'
-import likeIcon from './likeIcon.PNG'
-import commentIcon from './commentIcon.PNG'
-import messageIcon from './messageIcon.PNG'
-import saveIcon from './saveIcon.PNG'
-import smileIcon from './smillIcon.PNG'
+import '../../../style/reels.css';
+import spacex from '../../../assets/images/spacex.jpg'
+import nasa from '../../../assets/images/nasa.jpg'
+import Image from '../../../assets/images/Image.PNG'
+import liked from '../../../assets/images/heart.png'
+import likeIcon from '../../../assets/images/likeIcon.PNG'
+import commentIcon from '../../../assets/images/commentIcon.PNG'
+import messageIcon from '../../../assets/images/messageIcon.PNG'
+import saveIcon from '../../../assets/images/saveIcon.PNG'
+import smileIcon from '../../../assets/images/smillIcon.PNG'
 import { useEffect, useState } from 'react';
 
 
