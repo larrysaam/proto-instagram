@@ -1,8 +1,8 @@
-import NavigationBar from './Navigation/navigation';
-import Sugestion from './Suggestion/sugestion';
-import Content from './Reels/content';
+import NavigationBar from '../../components/Navigation/navigation';
+import Sugestion from '../../components/Suggestion/sugestion';
+import Content from '../../components/Reels/content';
 import profileImg from '../../assets/images/suggestion.PNG';
-import '../../style/navigation.css';
+
 
 function App() {
 

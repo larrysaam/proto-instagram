@@ -1,6 +1,6 @@
-import '../../../style/story.css';
-import fruit from '../../../assets/images/fruit.png'
-import lemon from '../../../assets/images/lemon.png'
+import './story.css';
+import fruit from '../../assets/images/fruit.png'
+import lemon from '../../assets/images/lemon.png'
 
 const Story =()=>{
 

@@ -1,4 +1,4 @@
-import '../../../style/sugestion.css';
+import './sugestion.css';
 
 const Sugestion = ({profileImg, userName}) =>{
 

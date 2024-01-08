@@ -1,4 +1,4 @@
-import '../../style/Login.css';
+import 'Login.css';
 import  instaImg from '../../assets/images/instagram logo.PNG';
 import  storeImg from '../../assets/images/stores.PNG';
 

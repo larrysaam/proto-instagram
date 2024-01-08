@@ -7,8 +7,8 @@
       "name": "spacex",
       "location": "Yaounde",
       "image": "Image",
-      "likes": 6,
-      "commentnumbers": 0,
+      "likes": 2,
+      "commentnumbers": 200,
       "description": "Starship liftoff in slow motion",
       "date": "APRIL 22"
     },
@@ -19,7 +19,7 @@
       "name": "nasa",
       "location": "Douala",
       "image": "Image",
-      "likes": 105,
+      "likes": 100,
       "commentnumbers": 220,
       "description": "Starship liftoff in slow motion from spaceX",
       "date": "APRIL 23"
@@ -31,7 +31,7 @@
       "name": "easa",
       "location": "Paris France",
       "image": "Image",
-      "likes": 2,
+      "likes": 1,
       "commentnumbers": 0,
       "description": "Starship liftoff in slow motion from spaceX",
       "date": "APRIL 22"
@@ -50,54 +50,18 @@
       "id": "21df902",
       "likedUsers": [
         "Paul",
-        "Larrien",
-        "Larrien",
-        "Larrien",
         "Larrien"
       ]
     },
     {
       "id": "21df909",
       "likedUsers": [
-        "joe",
-        "Larrien",
-        "Larrien",
-        "Larrien",
-        "Larrien",
-        "Larrien"
+        "joe"
       ]
     },
     {
       "id": "21df910",
       "likedUsers": [
-        "Larrien",
-        "Larrien"
-      ]
-    }
-  ],
-
-  "comments": [
-    {
-      "id": "21df902",
-      "comments": [
-        "wow awsome!"
-      ]
-    },
-    {
-      "id": "21df909",
-      "comments": [
-        "joe",
-        "Larrien",
-        "Larrien",
-        "Larrien",
-        "Larrien",
-        "Larrien"
-      ]
-    },
-    {
-      "id": "21df910",
-      "comments": [
-        "Larrien",
         "Larrien"
       ]
     }

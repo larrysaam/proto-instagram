@@ -1,13 +1,13 @@
-import darkLogo from '../../../assets/images/black logo.PNG';
-import homeicon from '../../../assets/images/icon.PNG';
-import real from '../../../assets/images/real.PNG';
-import messagesicon from '../../../assets/images/messagesicon.PNG';
-import search from '../../../assets/images/search.PNG';
-import explore from '../../../assets/images/explore.PNG';
-import notificon from '../../../assets/images/notificon.PNG';
-import createicon from '../../../assets/images/createicon.PNG';
-import moreicon from '../../../assets/images/moreicon.PNG';
-import '../../../style/navigation.css';
+import darkLogo from '../../assets/images/black logo.PNG';
+import homeicon from '../../assets/images/icon.PNG';
+import real from '../../assets/images/real.PNG';
+import messagesicon from '../../assets/images/messagesicon.PNG';
+import search from '../../assets/images/search.PNG';
+import explore from '../../assets/images/explore.PNG';
+import notificon from '../../assets/images/notificon.PNG';
+import createicon from '../../assets/images/createicon.PNG';
+import moreicon from '../../assets/images/moreicon.PNG';
+import './navigation.css';
 
 
 const NavigationBar = ({profileImg}) =>{

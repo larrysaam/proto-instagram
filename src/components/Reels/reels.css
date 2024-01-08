@@ -146,3 +146,15 @@
     font-size: 14px;
     margin-right: 20px;
 }
+
+.PostImage{
+    position: relative;
+}
+
+#taplikeicon{
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    transform: translate(180%,100%);
+    visibility: hidden;
+}
