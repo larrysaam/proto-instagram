@@ -20,12 +20,13 @@ import postComment from '../../utils/comment';
 const Reels =({reelposts})=>{
 
     const likesURL = 'http://localhost:8080/likes';
-    const [liked, setLiked] = useState(true);
+    const [liked, setLiked] = useState([]);
     const {response, loading, error} = useFetchLikeDetails(likesURL)
 
     useEffect(()=>{
         update()
-    },[])
+        console.log(liked)
+    },[response])
 
 
     // verify if login user has liked the post.
@@ -36,7 +37,12 @@ const Reels =({reelposts})=>{
         let values = FilteredLikes[0].likedUsers
         //loop through array of users who liked th post to find name of current user.
         for(let i=0; i<values.length; i++){
-            (values[i] === username) ? verified = true : verified = false
+            if(values[i] === username){
+                verified = true
+                break
+            }else{
+                verified = false
+            }
         } 
 
         return verified
@@ -44,19 +50,16 @@ const Reels =({reelposts})=>{
 
 
     const update = () =>{
-
         if(response){
-            reelposts.forEach((reel) => {
-                let value = verifyIfLiked(reel.id, "Larrien")
-                let Id = reel.id
-                    let obj = {
-                        [Id]: value
-                    }
-                    setLiked({...liked, obj})
-                    console.log(obj )
-                })
-        }else{
-           
+            var arr = []
+            reelposts.forEach(reel => {
+                var value = verifyIfLiked(reel.id, "Larrien")
+                if(value){
+                    var Id = reel.id
+                    setLiked(liked => ([...liked, Id]))
+                }
+        
+            })
         }
     }
 
@@ -64,51 +67,54 @@ const Reels =({reelposts})=>{
 
     //like post
     const addLike = async(Id, username)=>{ 
-
         let res = true
         res = LikePost(Id, response, reelposts, username)
-
         if(res){
-            setLiked({...liked, [Id] : true })
+            console.log("like Before ::: "+liked)
+            setLiked([...liked, Id])
+            console.log(Id)
+            setTimeout(() => {
+                console.log("like After:::: "+liked)
+            }, 1000);
+            
         }
     }
 
 
     //unlike post
     const unLike = async(Id, username)=>{ 
-
         let res = false
         res = UnlikedPost(Id, response, reelposts, username)
-
         if(res){
-            setLiked({...liked, [Id] : false })
+            var newlike = liked.filter(f => f!==Id) 
+            setLiked(newlike)
+            console.log("newlike:::: "+newlike)
+            
+            setTimeout(() => {
+                console.log("like:::: "+liked)
+            }, 1000);
         }
     }
 
 
     //double click to like post
     const doubleclick = (Id, username) =>{
-        if(!liked[Id]){
-            let res = true
-            res = LikePost(Id, response, reelposts, username)
-            if(res){
-                setLiked({...liked, [Id] : true })
-            }
-        }else{
-
-        }
-        
+        let newlike = []
+        newlike = liked.filter(f => f===Id) 
+        if(newlike.length<=0){
+            addLike(Id, username)
+        }        
     }
 
 
     // if user already liked video, unlike and visevesa
-    const likebtnClicked = (id, username)=>{
-        (verifyIfLiked(id, username) == true)?  unLike(id, username) : addLike(id, username)
+    const likebtnClicked = (id, username)=>{ 
+        (verifyIfLiked(id, username))?  unLike(id, username) : addLike(id, username)
     }
 
 
     //submit comment made on a post
-    const postcomment = (Id) =>{
+    const postcomment = (Id, commentsnum) =>{
         /**
          * 
          * usePostComment Hook
@@ -116,20 +122,20 @@ const Reels =({reelposts})=>{
          **/
         const url1 = ""
         const url2 = ""
-        let newcomment =
-        postComment(url1, url2, postid, reelposts, newcomment, commentsnum)
+        let newcomment = ''
+        postComment(url1, url2, Id, reelposts, newcomment, commentsnum)
     }
 
 
     //reels 
-    var reel = reelposts.map(reel =>
+    var reel = reelposts.map((reel, index) =>
         <div key={reel.id} className='reelDiv'>
 
             {/* top */}
             <div className='topReelDiv'>
                 <img src=
                 {
-                    (reel.name == "nasa") ? 
+                    (reel.name === "nasa") ? 
                     nasa : spacex
                 } 
                 alt='' 
@@ -156,7 +162,7 @@ const Reels =({reelposts})=>{
                     <li>
                         {/* like and unlike when heart is pressed*/}
                         {
-                            (liked[reel.id])?
+                            (liked && liked[index] === reel.id)?
                             <img  src={ likedIcon } onClick={()=>likebtnClicked(reel.id, "Larrien")} alt='likeicon' className='reelOptionIcon'/>
                             :
                             <img  src={ likeIcon } onClick={()=>likebtnClicked(reel.id, "Larrien")} alt='likeicon' className='reelOptionIcon'/>
@@ -174,7 +180,7 @@ const Reels =({reelposts})=>{
 
             {/* add comments */}
             <div className='addComment'>
-                <form onSubmit={postcomment(reel.id)}>
+                <form onSubmit={postcomment(reel.id, reel.commentnumbers)}>
                     <img src={smileIcon}  alt='smileicon'className='commentIcon' for='comment'/>
                     <input type='text' placeholder='Add a comment' name='comment' className='commentInput'/>
                     <input type='submit' value='Post' name='postcomment' className='postComment'/>

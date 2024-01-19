@@ -4,16 +4,34 @@
 }
 
 #nav{
+    transition: 0.7s;
     float: left;
     height: 100%;
     width: 18%;
     padding-left: 0px;
     background-color: black;
+    /* width: 70px; */
+}
+
+#navFold{
+    transition: 0.7s;
+    float: left;
+    height: 100%;
+    padding-left: 0px;
+    background-color: black;
+    width: 70px;
 }
 
 .logoimg{
-
     margin-left: 25px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.iglogo{
+    height: 35px;
+    width: 35px;
+    margin-left: 18px;
     margin-top: 40px;
     margin-bottom: 20px;
 }
@@ -24,18 +42,61 @@
     list-style: none;
     color: white;
     text-align: center;
+    /* visibility: hidden; */
 }
 
-.NavList{
-    margin-left: -20px;
+.hiddenNavLink{
+    display: block;
+    text-decoration: none;
+    list-style: none;
+    color: white;
+    text-align: center;
+    visibility: hidden;
 }
 
-.NavList li{
+
+.NavListFold li{
+    transition: 0.7s;
+    height: 40px;
+    width: 150px;
     margin-bottom: 25px;
     align-items: center;
     display: flex;
     text-align: center;
     font-size: 18px;
+    margin-top: -10px;
+    border-radius: 15px;
+}
+
+.NavListFold{
+    margin-left: -20px;
+    display: inline-block;
+}
+
+.NavListFold li:hover{
+    background-color: none;
+}
+
+
+.NavList{
+    margin-left: -20px;
+    display: inline-block;
+}
+
+.NavList li{
+    height: 40px;
+    width: 150px;
+    margin-bottom: 25px;
+    align-items: center;
+    display: flex;
+    text-align: center;
+    font-size: 18px;
+    margin-top: -10px;
+    border-radius: 15px;
+}
+
+.NavList li:hover{
+    background-color: rgba(255, 255, 255, 0.282);
 }
 
 .NavList img{

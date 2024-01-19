@@ -8,7 +8,6 @@ function App() {
 
   return(
     <div className='homeDiv'>
-        <NavigationBar />
         <Content />
         <Sugestion profileImg={profileImg}  />
     </div>

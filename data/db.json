@@ -19,7 +19,7 @@
       "name": "nasa",
       "location": "Douala",
       "image": "Image",
-      "likes": 105,
+      "likes": 106,
       "commentnumbers": 220,
       "description": "Starship liftoff in slow motion from spaceX",
       "date": "APRIL 23"
@@ -31,7 +31,7 @@
       "name": "easa",
       "location": "Paris France",
       "image": "Image",
-      "likes": 2,
+      "likes": 1,
       "commentnumbers": 0,
       "description": "Starship liftoff in slow motion from spaceX",
       "date": "APRIL 22"
@@ -50,9 +50,6 @@
       "id": "21df902",
       "likedUsers": [
         "Paul",
-        "Larrien",
-        "Larrien",
-        "Larrien",
         "Larrien"
       ]
     },
@@ -60,22 +57,14 @@
       "id": "21df909",
       "likedUsers": [
         "joe",
-        "Larrien",
-        "Larrien",
-        "Larrien",
-        "Larrien",
         "Larrien"
       ]
     },
     {
       "id": "21df910",
-      "likedUsers": [
-        "Larrien",
-        "Larrien"
-      ]
+      "likedUsers": []
     }
   ],
-
   "comments": [
     {
       "id": "21df902",

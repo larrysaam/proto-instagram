@@ -1,0 +1,210 @@
+.profileinfodiv{
+    min-width: 82%;
+    min-height: 100%;
+    height: 60%;
+    float: right;
+    text-align: center;
+    align-items: center;
+    justify-content: space-evenly;
+    display: block;
+    overflow: scroll;
+}
+
+.profileinfodiv::-webkit-scrollbar{
+    display: none;
+}
+
+.topDiv{
+    height: 36%;
+    width: 70%;
+    margin: auto;
+    display: block;
+    padding: 10px;
+}
+
+.profileimagediv{
+    width: 100px;
+    float: left;
+}
+
+.info{
+    display: inline-block;
+    width: 450px;
+    margin-top: -20px;
+}
+
+.topprofile{
+    width: 100%;
+    display:  flex;
+    list-style: none;
+    justify-content: space-between;
+}
+
+
+#username{
+    font-size: 20px;
+    color: white;
+    font-family: sans-serif;
+    font-weight: 100;
+}
+
+.btn{
+    width: 120px;
+    height: 30px;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.331);
+    border-radius: 10px;
+    border: none;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.settingbtn{
+    width: 50px;
+    height: 30px;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    background: none ;
+    border-radius: 10px;
+    border: none;
+    margin-top: 10px;
+    cursor: pointer;
+
+}
+
+#settingicon{
+    height: 20px;
+    width: 20px;
+}
+
+.pageinfo{
+    width: 70%;
+    display:  flex;
+    list-style: none;
+    justify-content: space-between;
+    color: white;
+    margin-top: -20px;
+    font-size: 14px;
+}
+
+
+.buttominfo{
+    width: 80%;
+    display:  inline-block;
+    list-style: none;
+    text-align: left;
+    padding-left: 0px;
+    color: white;
+    margin-top: -20px;
+}
+
+
+.info h4{
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.bio{
+    margin-top: -10px;
+    font-weight: 100;
+}
+
+#profileImage{
+    height: 150px;
+    width: 150px;
+    border-radius: 75px;
+    border: 1px solid rgb(242, 60, 215);
+    float: left;
+}
+
+/* story */
+
+.storydiv{
+    height: 180px;
+    width: 80%;
+    margin: auto;
+    padding-left: 20px;
+}
+
+.storyul{
+    list-style: none;
+    display: inline-block;
+    color: white;
+    font-size: 12px;
+    float: left;
+}
+
+.storyul li p{
+    margin-top: 100px;
+}
+
+#storyImage{
+    height: 80px;
+    width: 80px;
+    border-radius: 40px;
+    float: left;
+    object-fit: contain;
+    border: 1px solid gray;
+    font-size: 50px;
+    font-weight: 100;
+}
+
+hr{
+    width: 75%;
+    border-color: rgba(255, 255, 255, 0.184);
+}
+
+/* selection */
+
+.selection{
+    width: 30%;
+    height: 40px;
+    margin: auto;
+    display: block;
+    padding: none;
+    margin-top: -18px;
+}
+
+.select-ul{
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    padding: none;
+
+}
+
+.select-ul li button{
+    padding-top: 10px;
+    color: rgba(255, 255, 255, 0.458);
+    font-size: 12px;
+    background: none;
+    border: none;
+}
+
+
+/* posts */
+
+.postcontainer{
+    min-height: 200px;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+
+.bottomContentDiv{
+    min-height: 200px;
+    width: 75%;
+    margin: auto;
+    display: block;
+    padding: none;
+}
+
+#active{
+    border-top: 2px solid white;
+    color: white;
+}

@@ -1,0 +1,37 @@
+.notfound-container{
+    height: 100%;
+    min-width: fit-content;
+    display: flex;
+}
+
+.notfound-msg-box{
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    justify-content: center;
+    text-align: center;
+}
+
+.notfound-msg-box h1{
+    height: 100px;
+    font-size: 200px;
+    color: white;
+    text-shadow: 0 10px 10px 10px rgb(213, 1, 255);
+}
+
+.notfound-msg-box h3{
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.678);
+}
+
+.notfound-msg-box button{
+    height: 40px;
+    width: 150px;
+    background-color: rgb(0, 164, 229);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
