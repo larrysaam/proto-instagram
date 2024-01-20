@@ -16,17 +16,18 @@ import { useEffect, useState } from 'react';
 import postComment from '../../utils/comment';
 
 
-
-const Reels =({reelposts})=>{
+const Reels =({reelposts, setPopup, setPostdata})=>{
 
     const likesURL = 'http://localhost:8080/likes';
-    const [liked, setLiked] = useState([]);
     const {response, loading, error} = useFetchLikeDetails(likesURL)
+    const [liked, setLiked] = useState([]);
+    const [newcomment, setNewcomment] = useState('')
 
     useEffect(()=>{
+        setLiked([])
         update()
         console.log(liked)
-    },[response])
+    },[response, reelposts])
 
 
     // verify if login user has liked the post.
@@ -114,16 +115,13 @@ const Reels =({reelposts})=>{
 
 
     //submit comment made on a post
-    const postcomment = (Id, commentsnum) =>{
-        /**
-         * 
-         * usePostComment Hook
-         * 
-         **/
-        const url1 = ""
-        const url2 = ""
-        let newcomment = ''
-        postComment(url1, url2, Id, reelposts, newcomment, commentsnum)
+    const postcomment = (e, reel) =>{
+        e.preventDefault()
+        if(postComment( newcomment, reel)){
+            alert("submited")
+        }else{
+            
+        }
     }
 
 
@@ -174,16 +172,16 @@ const Reels =({reelposts})=>{
                 </ul>
                 <p className='reelLikes'>{reel.likes} likes</p>
                 <p className='reelDesc'><b>{reel.name} </b> {reel.description}</p>
-                <button onClick='viewComments()' className='viewcomments'>View all {reel.commentnumbers} comments</button>
+                <button onClick={()=>setPopup(true)} className='viewcomments'>View all {reel.commentnumbers} comments</button>
                 <p className='reelDate'>{reel.date}</p>
             </div>
 
             {/* add comments */}
             <div className='addComment'>
-                <form onSubmit={postcomment(reel.id, reel.commentnumbers)}>
+                <form >
                     <img src={smileIcon}  alt='smileicon'className='commentIcon' for='comment'/>
-                    <input type='text' placeholder='Add a comment' name='comment' className='commentInput'/>
-                    <input type='submit' value='Post' name='postcomment' className='postComment'/>
+                    <input type='text' placeholder='Add a comment' name='comment' onChange={(e)=>setNewcomment(e.target.value)} className='commentInput'/>
+                    <input type='submit' value='Post' name='postcomment' onClick={(e)=>postcomment(e,reel)} className='postComment'/>
                 </form>
             </div>
         </div>

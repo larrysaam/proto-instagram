@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 const useFetchUserInfo = (url)=>{
-    const [response, setResponse] = useState(null)
+    const [response, setResponse] = useState({})
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
 
@@ -16,6 +16,7 @@ const useFetchUserInfo = (url)=>{
         try {
             const res = await fetch(url)
             const info = await res.json()
+            console.log(info)
             setResponse(info)
         } catch (error) {
             setError(error)

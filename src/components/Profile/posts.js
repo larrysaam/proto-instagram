@@ -1,19 +1,19 @@
 import './profile.css'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import image from '../../assets/images/falcon_rocket.jpg'
 
-const Posts = ({posts, saved, tagged})=>{
+const Posts = ({postsid, saved, tagged})=>{
 
-
-
-    // const posts = Posts.map((post, index)=>{
-    //     return(
-    //         <img src='' alt='post not available' id='postimage'/>
-    //     )
-    // })
-
+   
     return(
         <div className="postcontainer">
-            {posts && <h1>Posts</h1>}
+            {postsid && 
+                postsid.map((postimg, index)=>{
+                    return(
+                        <img src={(postimg === "21df909")? image : null} alt={postimg} id='postimage'/>
+                    )
+                })
+            }
             {saved && <h1>Saved</h1>}
             {tagged && <h1>Tagged</h1>}
         </div>

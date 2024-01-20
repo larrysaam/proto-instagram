@@ -8,6 +8,7 @@ import notificon from '../../assets/images/notificon.PNG';
 import createicon from '../../assets/images/createicon.PNG';
 import moreicon from '../../assets/images/moreicon.PNG';
 import logo from '../../assets/images/ig logo.png'
+import profilepic from '../../assets/images/spacex.jpg'
 import './navigation.css';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -44,7 +45,7 @@ const NavigationBar = ({profileImg}) =>{
                 <li onClick={()=>gotomessages()}><img  src={messagesicon} alt="icon" /><a href="#" className={`${(fold)? "hiddenNavLink" : "NavLink"}`}>Messages</a></li>
                 <li onClick={()=>showNotif()}><img  src={notificon} alt="icon" /><a href="#" className={`${(fold)? "hiddenNavLink" : "NavLink"}`}>Notifications</a></li>
                 <li onClick={()=>navigate('create')}><img  src={createicon} alt="icon" /><a href="#" className={`${(fold)? "hiddenNavLink" : "NavLink"}`}>Create</a></li>
-                <li onClick={()=>navigate('profile')}><img  src={profileImg} alt="icon" /><a href="#" className={`${(fold)? "hiddenNavLink" : "NavLink"}`}>Profile</a></li>
+                <li onClick={()=>navigate('profile')}><img  src={profilepic} alt="icon" id="navprofilepic"/><a href="#" className={`${(fold)? "hiddenNavLink" : "NavLink"}`}>Profile</a></li>
 
                 <li className='more'><img  src={moreicon} alt="icon" /><a href="#" className={`${(fold)? "hiddenNavLink" : "NavLink"}`}>Profile</a></li>
             </ul>

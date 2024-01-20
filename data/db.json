@@ -8,19 +8,25 @@
       "location": "Yaounde",
       "image": "Image",
       "likes": 6,
-      "commentnumbers": 0,
+      "commentnumbers": 1,
+      "comments": [
+        "wow"
+      ],
       "description": "Starship liftoff in slow motion",
       "date": "APRIL 22"
     },
     {
       "id": "21df909",
-      "userId": "343u450",
+      "userId": "001",
       "profile": "profileImage",
       "name": "nasa",
       "location": "Douala",
       "image": "Image",
       "likes": 106,
-      "commentnumbers": 220,
+      "commentnumbers": 221,
+      "comments": [
+        "lets go"
+      ],
       "description": "Starship liftoff in slow motion from spaceX",
       "date": "APRIL 23"
     },
@@ -33,16 +39,36 @@
       "image": "Image",
       "likes": 1,
       "commentnumbers": 0,
+      "comments": [],
       "description": "Starship liftoff in slow motion from spaceX",
       "date": "APRIL 22"
     }
   ],
   "users": [
     {
-      "userId": "",
-      "name": "Larrien",
+      "id": "001",
+      "username": "Larriensaams",
       "email": "nyaah73@gmail.com",
-      "password": "12345678"
+      "password": "12345678",
+      "followers_num": 0,
+      "following_num": 0,
+      "posts_num": 1,
+      "bio": "Software engineer",
+      "followers": [
+        ""
+      ],
+      "following": [
+        ""
+      ],
+      "posts": [
+        "21df909"
+      ],
+      "saved": [
+        ""
+      ],
+      "tagged": [
+        ""
+      ]
     }
   ],
   "likes": [

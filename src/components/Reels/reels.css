@@ -158,3 +158,124 @@
     transform: translate(180%,100%);
     visibility: hidden;
 }
+
+
+/* message popup */
+.message-popup{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.inner-message{
+    position: relative;
+    width: 70%;
+    height: 85%;
+    background-color: black;
+    border: 1px solid rgb(221, 0, 255);
+    border-radius: 20px;
+    display: flex;
+}
+
+.inner-popup-image-container{
+    width: 40%;
+    height: 100%;
+}
+
+.right-side-popup{
+    width: 58%;
+    height: 100%;
+    padding: 0 20px;
+}
+
+#popup-comment-img{
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+}
+
+.message-popup-options{
+    width: 100%;
+    height: 40px;
+}
+
+.message-popup-options ul{
+    display: flex;
+    padding-left: 0px;
+}
+
+.comment-reelOptionIcon{
+    height: 30px;
+    height: 30px;
+    float: left;
+    margin-left: 10px;
+}
+
+.comment-saveicon{
+    height: 35px;
+    height: 35px;
+    float: right;
+    margin-top: -50px;
+}
+
+.likes-text{
+    color: white;
+}
+
+.like-text-container{
+    height: 30px;
+    margin-top: -10px;
+}
+
+.bottom-popup-div{
+    width: 100%;
+}
+
+.comment-list-contianer {
+    height: 70%;
+}
+
+.comment-input-container{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#popup-comment-input{
+    height: 40px;
+    width: 100%;
+    background: none;
+    border: none;
+}
+
+.comment-input-container form{
+    width: 100%;
+    display: flex;
+}
+
+.post-btn{
+    width: 100px;
+    background: none;
+    border: none;
+    font-weight: bold;
+    color: rgb(0, 140, 255);
+}
+
+.close-popup-btn{
+    color: white;
+    font-size: 20px;
+    border: none;
+    background: none;
+    top: 20px;
+    right: 20px;
+    position: absolute;
+}

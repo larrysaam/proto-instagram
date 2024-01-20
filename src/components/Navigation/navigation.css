@@ -8,6 +8,7 @@
     float: left;
     height: 100%;
     width: 18%;
+    min-width: 200px;
     padding-left: 0px;
     background-color: black;
     /* width: 70px; */
@@ -19,7 +20,7 @@
     height: 100%;
     padding-left: 0px;
     background-color: black;
-    width: 70px;
+    max-width: 70px;
 }
 
 .logoimg{
@@ -107,4 +108,10 @@
 .more{
     position: absolute;
     bottom: 0;
+}
+
+#navprofilepic{
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
 }

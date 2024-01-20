@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 
 const useFetchComments = (url)=>{
-    const [response, setResponse] = useState(null)
-    const [loading, setLoading] = useState(true)
+    const [data, setData] = useState({})
+    const [comments, setComments] = useState(null)
+    const [commentsNum, setCommentsNum] = useState(true)
     const [error, setError] = useState(null)
 
     //executed on render
@@ -12,19 +13,21 @@ const useFetchComments = (url)=>{
 
 
     const fetchcomment = async()=>{
-        setLoading(true)
+
         try {
             const res = await fetch(url)
             const comment = await res.json()
-            setResponse(comment)
+            setData(comment)
+            setComments(comment.comments)
+            setCommentsNum(comment.commentnumbers)
         } catch (error) {
             setError(error)
         }finally{
-            setLoading(false)
+
         }
     }
 
-    return {response, loading, error}
+    return {data, comments, commentsNum, error}
 
 }
 
