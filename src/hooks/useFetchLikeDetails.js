@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 const useFetchLikeDetails = (url)=>{
-    const [response, setResponse] = useState(null)
+    const [response, setResponse] = useState()
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
 
@@ -14,8 +14,10 @@ const useFetchLikeDetails = (url)=>{
     const fetchLikes = async()=>{
         setLoading(true)
         try {
+            console.log("url  "+url)
             const res = await fetch(url)
             const likes = await res.json()
+            console.log("cc"+likes)
             setResponse(likes)
         } catch (error) {
             setError(error)

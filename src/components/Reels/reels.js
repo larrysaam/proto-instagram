@@ -26,7 +26,7 @@ const Reels =({reelposts, setPopup, setPostdata})=>{
     useEffect(()=>{
         setLiked([])
         update()
-        console.log(liked)
+
     },[response, reelposts])
 
 
@@ -124,6 +124,11 @@ const Reels =({reelposts, setPopup, setPostdata})=>{
         }
     }
 
+    const seeAllComments =(reel)=>{
+        setPostdata(reel)
+        setPopup(true)
+    }
+
 
     //reels 
     var reel = reelposts.map((reel, index) =>
@@ -172,7 +177,7 @@ const Reels =({reelposts, setPopup, setPostdata})=>{
                 </ul>
                 <p className='reelLikes'>{reel.likes} likes</p>
                 <p className='reelDesc'><b>{reel.name} </b> {reel.description}</p>
-                <button onClick={()=>setPopup(true)} className='viewcomments'>View all {reel.commentnumbers} comments</button>
+                <button onClick={()=>{seeAllComments(reel)}} className='viewcomments'>View all {reel.commentnumbers} comments</button>
                 <p className='reelDate'>{reel.date}</p>
             </div>
 

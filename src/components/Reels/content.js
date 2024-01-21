@@ -13,7 +13,11 @@ const Content = () =>{
     const postURL ="http://localhost:8080/posts";
     const {response, error, loading} = useFetchPosts(postURL)
     const [popup, setPopup] = useState(false)
-    const [postdata, setPostdata] = useState({})
+    const [postdata, setPostdata] = useState([])
+
+    useEffect(()=>{
+        console.log("comments  " +postdata)
+    })
 
     return(
         <div id='ContentDiv'>
@@ -21,7 +25,7 @@ const Content = () =>{
             {loading && <img src={loadingLogo} alt=""/>}
             {error && <p>Something went wrong</p>}
             {response && <Reels reelposts={response} setPopup={setPopup} setPostdata={setPostdata}/>}
-            {(popup)? <CommentPopup setPopup={setPopup}/> : ""}
+            {(popup)? <CommentPopup setPopup={setPopup} postdata={postdata}/> : ""}
         </div>
     );
 }
