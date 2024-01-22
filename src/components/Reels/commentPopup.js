@@ -8,6 +8,7 @@ import postimg from '../../assets/images/falcon_rocket.jpg'
 import Comment from "../comment";
 import verifyIfLike from '../../utils/verifyIfLike'
 import useFetchLikeDetails from '../../hooks/useFetchLikeDetails'
+import postComment from '../../utils/comment'
 import UnlikePost from '../../utils/UnlikedPost'
 import LikePost from '../../utils/LikedPost'
 import { useEffect, useState } from 'react'
@@ -17,9 +18,11 @@ const CommentPopup=({setPopup, postdata})=>{
     const username = "Larrien"
     const url = 'http://localhost:8080/likes'
     const {response, loading, error} = useFetchLikeDetails(url + "/" + postdata.id)
-    const [comments, setComments] = useState([])
+    const [comments, setComments] = useState()
+    const [newcomment, setNewcomment] = useState('')
     const [postlikes, setpostlikes] = useState()
     const [liked, setLiked] = useState(false)
+    let store =[]
 
     useEffect(()=>{
         console.log("id :"+ postdata.id)
@@ -27,8 +30,18 @@ const CommentPopup=({setPopup, postdata})=>{
         setpostlikes(postdata.likes)
         // let verify = verifyIfLike(username, response.likedUsers)
         // setLiked(verify)
-    },[response])
+    },[])
 
+
+    //add new comment to list of existing comments of this post with id
+    const addNewComment =(e)=>{
+        e.preventDefault()
+        if(postComment( newcomment, postdata)){
+            setComments([...comments, newcomment])
+        }else{
+            
+        }
+    }
 
     // //like post
     // const addLike = async(Id, username)=>{ 
@@ -78,12 +91,12 @@ const CommentPopup=({setPopup, postdata})=>{
                     <div className="right-side-popup">
                         <div className="comment-list-contianer">
                             <ul>
-                                {(comments.length) ?
+                                {comments &&
                                     comments.map((postcomment)=>{
                                         return(
                                             <li><Comment messageText={postcomment} username="saam"/></li>
                                         )
-                                    }): console.log("no comment")
+                                    })
                                 }
                             </ul>
                         </div>
@@ -103,8 +116,8 @@ const CommentPopup=({setPopup, postdata})=>{
                                 </div>
                                 <div className="comment-input-container">
                                     <form>
-                                        <input type="text" name="comment" placeholder="Add a comment..." id="popup-comment-input"/>
-                                        <button type="submit" className="post-btn">Post</button>
+                                        <input type="text" name="comment" placeholder="Add a comment..." onChange={(e)=>setNewcomment(e.target.value)} id="popup-comment-input"/>
+                                        <button type="submit" className="post-btn" onClick={(e)=>addNewComment(e)}>Post</button>
                                     </form>
                                 </div>
                             </div>

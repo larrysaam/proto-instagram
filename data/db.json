@@ -8,9 +8,14 @@
       "location": "Yaounde",
       "image": "Image",
       "likes": 6,
-      "commentnumbers": 1,
+      "commentnumbers": 6,
       "comments": [
-        "wow"
+        "wow",
+        "wonderful",
+        "good",
+        "we are very exited for this new event. Lets go Elon",
+        "Elon",
+        "lets go"
       ],
       "description": "Starship liftoff in slow motion",
       "date": "APRIL 22"

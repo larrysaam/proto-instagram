@@ -270,6 +270,7 @@
     width: 100%;
     background: none;
     border: none;
+    color: white;
 }
 
 .comment-input-container form{

@@ -1,0 +1,11 @@
+.img-expore-container{
+    height: 30%;
+    width: 30%;
+    margin-right: 6px;
+}
+
+#explore-img-content{
+    height: 100%;
+    width: 100%;
+    border: none;
+}

@@ -1,0 +1,74 @@
+.create-popup-container{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inner-create-container{
+    height: 80%;
+    width: 35%;
+    background-color: black;
+    border-radius: 20px;
+    border: 1px solid rgb(204, 0, 255);
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.inner-create-header hr{
+    width: 100%;
+}
+
+.inner-create-header h3{
+    color: white;
+    text-align: center;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.inner-create-main-box{
+    height: 80%;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.inner-create-main-box div h2{
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.inner-create-main-box div button{
+    width: 200px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(0, 110, 255);
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#create-media-icon{
+    height: 100px;
+    width: 100px;
+}
+
+.close-create-popup-btn{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    border: none;
+    background: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}

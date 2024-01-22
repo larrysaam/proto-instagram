@@ -14,7 +14,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 
-const NavigationBar = ({profileImg}) =>{
+const NavigationBar = ({setShowPopup}) =>{
 
     const pathname = window.location.pathname
     const navigate = useNavigate()
@@ -44,10 +44,10 @@ const NavigationBar = ({profileImg}) =>{
                 <li onClick={()=>navigate('reels')}><img  src={real} alt="icon" /><a href="#" className={`${(fold)? "hiddenNavLink" : "NavLink"}`}>Reels</a></li>
                 <li onClick={()=>gotomessages()}><img  src={messagesicon} alt="icon" /><a href="#" className={`${(fold)? "hiddenNavLink" : "NavLink"}`}>Messages</a></li>
                 <li onClick={()=>showNotif()}><img  src={notificon} alt="icon" /><a href="#" className={`${(fold)? "hiddenNavLink" : "NavLink"}`}>Notifications</a></li>
-                <li onClick={()=>navigate('create')}><img  src={createicon} alt="icon" /><a href="#" className={`${(fold)? "hiddenNavLink" : "NavLink"}`}>Create</a></li>
+                <li onClick={()=>setShowPopup(true)}><img  src={createicon} alt="icon" /><a href="#" className={`${(fold)? "hiddenNavLink" : "NavLink"}`}>Create</a></li>
                 <li onClick={()=>navigate('profile')}><img  src={profilepic} alt="icon" id="navprofilepic"/><a href="#" className={`${(fold)? "hiddenNavLink" : "NavLink"}`}>Profile</a></li>
 
-                <li className='more'><img  src={moreicon} alt="icon" /><a href="#" className={`${(fold)? "hiddenNavLink" : "NavLink"}`}>Profile</a></li>
+                <li className='more'><img  src={moreicon} alt="icon" /><a href="#" className={`${(fold)? "hiddenNavLink" : "NavLink"}`}>More</a></li>
             </ul>
         </nav>
     )

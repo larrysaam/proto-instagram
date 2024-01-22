@@ -7,17 +7,24 @@ import Profile from './pages/Profile/profile';
 import NotifList from './components/Notification/NotifList';
 import NavigationBar from './components/Navigation/navigation';
 import NotFound from './pages/NotFound/pagenotfound'
+import CreatePopup from './components/CreatePopup/createPopup';
+import Explore from './pages/Explore/Explore'
+
 
 function App() {
+
+  const [showPopup, setShowPopup] = useState(false)
 
 
   return(
     <div className='main-app-container'>
-      <NavigationBar/>
+      <NavigationBar setShowPopup={setShowPopup}/>
+      {(showPopup)? <CreatePopup setShowPopup={setShowPopup}/> : ""}
       <Routes>
           <Route path='/' element={<Home/>}/>
           <Route path='messages' element={<Messages/>}/>
           <Route path='profile' element={<Profile/>}/>
+          <Route path='explore' element={<Explore/>}/>
           <Route path='*' element={<NotFound/>}/>
         </Routes>
     </div>
