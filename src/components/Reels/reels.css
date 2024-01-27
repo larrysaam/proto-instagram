@@ -1,5 +1,5 @@
 .reelDiv{
-    width: 100%;
+    width: 90%;
     background-color: black;
     border: 1px solid gray;
     border-radius: 10px;
@@ -294,4 +294,117 @@
     top: 20px;
     right: 20px;
     position: absolute;
+}
+
+
+@media screen and (max-width: 600px){
+    #ContentDiv{
+        width: 90%;
+        margin: auto;
+        margin-right: 0px;
+        margin-left: 0px;
+        justify-content: space-between;
+        overflow-x: none;
+        padding: 0px;
+    }
+
+    .homeDiv{      
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow-x: none;
+    }
+
+    .reelDiv{
+        width: 100%;
+        background-color: black;
+        border: 1px solid gray;
+        border-radius: 10px;
+        margin-top: 15px;
+        color: white;
+        font-family: sans-serif;
+        margin-right: 0px;
+        padding-right: 0px;
+    }
+
+    .reelDiv .options .reelOptionIcon{
+        height: 25px;
+        width: 25px;
+        border-radius: 15px;
+        margin-right: 10px;
+    }
+
+    
+    .reelDiv .options .save{
+        height: 25px;
+        width: 25px;
+        border-radius: 15px;
+        margin-right: 20px;
+        float: right;
+    }
+
+    
+    .topReelDiv .profileImage{
+        height: 35px;
+        width: 35px;
+        border-radius: 20px;
+        border: 1px solid gray;
+        float: left;
+        margin-top: 10px;
+    }
+
+    .topReelDiv ul .reelName{
+        font-size: 11px;
+        font-weight: bold;
+        float: left;
+    }
+    
+    .topReelDiv ul .reelLocation{
+        font-size: 11px;
+        color: antiquewhite;
+    
+    }
+
+
+    /* popup message box for comments */
+
+    .inner-message{
+        position: relative;
+        width: 95%;
+        height: 60%;
+        background-color: black;
+        border: 1px solid rgb(221, 0, 255);
+        border-radius: 20px;
+        display: flex;
+    }
+
+    .comment-reelOptionIcon{
+        width: 22px;
+        height: 22px;
+        float: left;
+        margin-left: 10px;
+    }
+
+    .comment-saveicon{
+        width: 22px;
+        height: 22px;
+        float: right;
+        margin-top: -40px;
+    }
+
+    .message-popup-options{
+        width: 100%;
+        height: 10px;
+    }
+
+    .like-text-container{
+        height: 20px;
+        margin-top: -4px;
+    }
+
+    .like-text-container .likes-text{
+        font-size: 14px;
+        margin-left: 10px;
+    }
 }

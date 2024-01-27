@@ -1,8 +1,8 @@
 
 #ContentDiv{
     float: left;
+    width: 30%;
     height: 100%;
-
     display: block;
     margin-top: 40px;
     margin-left: 120px;
@@ -18,7 +18,7 @@
 
 #StoryBox{
     height: 100px;
-    width: 450px;
+    width: 90%;
     background-color: black;
     border-radius: 10px;
     border: 1px solid gray ;
@@ -55,4 +55,11 @@ li{
     width: 50px;
     border-radius: 25px;
     border: 2px solid rgb(143, 3, 143);
+}
+
+@media screen and (max-width: 600px){
+    #StoryBox{
+        width: 100%;
+    }
+
 }

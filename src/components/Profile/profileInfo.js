@@ -61,8 +61,10 @@ const ProfileInfo =()=>{
                 <div className="info">
                     <ul className="topprofile">
                         <li><h2 id="username">{name}</h2></li>
-                        <li><button className="btn">Edit prorfile</button></li>
-                        <li><button className="btn">View archive</button></li>
+                        <ul>
+                            <li><button className="btn">Edit prorfile</button></li>
+                            <li><button className="btn">View archive</button></li>
+                        </ul>
                         <li><button className="settingbtn"><img src={settingicon} alt='profile Image' id="settingicon"/></button></li>
                     </ul>
                     <ul className="pageinfo">

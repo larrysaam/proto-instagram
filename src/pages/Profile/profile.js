@@ -5,7 +5,7 @@ import './profile.css'
 function Profile() {
 
   return(
-        <ProfileInfo />
+    <ProfileInfo />   
   )
 }
 

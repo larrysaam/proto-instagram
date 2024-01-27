@@ -8,14 +8,15 @@
       "location": "Yaounde",
       "image": "Image",
       "likes": 6,
-      "commentnumbers": 6,
+      "commentnumbers": 7,
       "comments": [
         "wow",
         "wonderful",
         "good",
         "we are very exited for this new event. Lets go Elon",
         "Elon",
-        "lets go"
+        "lets go",
+        ""
       ],
       "description": "Starship liftoff in slow motion",
       "date": "APRIL 22"
@@ -43,7 +44,7 @@
       "name": "easa",
       "location": "Paris France",
       "image": "Image",
-      "likes": 1,
+      "likes": 2,
       "commentnumbers": 0,
       "comments": [],
       "description": "Starship liftoff in slow motion from spaceX",
@@ -94,7 +95,9 @@
     },
     {
       "id": "21df910",
-      "likedUsers": []
+      "likedUsers": [
+        "Larrien"
+      ]
     }
   ],
   "comments": [

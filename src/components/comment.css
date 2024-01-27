@@ -42,3 +42,25 @@
     color: rgba(255, 255, 255, 0.587);
     cursor: pointer;
 }
+
+
+@media screen and (max-width: 600px){
+    .comment-message-container{
+        width: 100%;
+        height: 70px;
+        margin-bottom: 5px;
+    }
+
+    #comment-profile-pic{
+        height: 30px;
+        width: 30px;
+        border-radius: 25px;
+        border: 2px solid rgb(230, 0, 255);
+    }
+
+    .message-text-container p{
+        font-size: 13px;
+    }
+
+
+}

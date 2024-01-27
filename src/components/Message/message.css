@@ -139,3 +139,34 @@
     width: 100px;
     border-radius: 50px;
 }
+
+
+@media screen and (max-width: 600px){
+    /* message box */
+    .mainmessagebox{
+        display: none;
+    }
+
+
+    
+
+    .listcontainer{
+        height: 100%;
+        width: 100%;
+        background-color: black;
+        padding-right: 20px;
+
+    }
+
+    .listcontainer .header{
+        height: 10%;
+    }
+
+    .listcontainer .list{
+        height: 80%;
+        width: 100%;
+        overflow: scroll;
+        margin-top: 0px;
+        background-color: black;
+    }
+}

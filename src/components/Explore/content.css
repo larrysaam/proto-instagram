@@ -9,3 +9,15 @@
     width: 100%;
     border: none;
 }
+
+@media screen and (max-width: 600px){
+    .img-expore-container{
+        height: 100%;
+        width: 30%;
+    }
+    
+    #explore-img-content{
+        height: 200px;
+        border: none;
+    }
+}

@@ -39,15 +39,15 @@ const NavigationBar = ({setShowPopup}) =>{
 
             <ul className={`${(fold)? "NavListFold" : "NavList"}`}>
                 <li onClick={()=>navigate('/')}><img  src={homeicon} alt="icon" /><a href="#" className={`${(fold)? "hiddenNavLink" : "NavLink"}`}> Home</a></li>
-                <li onClick={()=>navigate('search')}><img  src={search} alt="icon" /><a href="#" className={`${(fold)? "hiddenNavLink" : "NavLink"}`}>Search</a></li>
+                <li onClick={()=>navigate('search')} className='notifbtn'><img  src={search} alt="icon" /><a href="#" className={`${(fold)? "hiddenNavLink" : "NavLink"}`}>Search</a></li>
                 <li onClick={()=>navigate('explore')}><img  src={explore} alt="icon" /><a href="#" className={`${(fold)? "hiddenNavLink" : "NavLink"}`}>Explore</a></li>
                 <li onClick={()=>navigate('reels')}><img  src={real} alt="icon" /><a href="#" className={`${(fold)? "hiddenNavLink" : "NavLink"}`}>Reels</a></li>
                 <li onClick={()=>gotomessages()}><img  src={messagesicon} alt="icon" /><a href="#" className={`${(fold)? "hiddenNavLink" : "NavLink"}`}>Messages</a></li>
-                <li onClick={()=>showNotif()}><img  src={notificon} alt="icon" /><a href="#" className={`${(fold)? "hiddenNavLink" : "NavLink"}`}>Notifications</a></li>
+                <li onClick={()=>showNotif()} className='notifbtn'><img  src={notificon} alt="icon" /><a href="#" className={`${(fold)? "hiddenNavLink" : "NavLink"}`}>Notifications</a></li>
                 <li onClick={()=>setShowPopup(true)}><img  src={createicon} alt="icon" /><a href="#" className={`${(fold)? "hiddenNavLink" : "NavLink"}`}>Create</a></li>
                 <li onClick={()=>navigate('profile')}><img  src={profilepic} alt="icon" id="navprofilepic"/><a href="#" className={`${(fold)? "hiddenNavLink" : "NavLink"}`}>Profile</a></li>
 
-                <li className='more'><img  src={moreicon} alt="icon" /><a href="#" className={`${(fold)? "hiddenNavLink" : "NavLink"}`}>More</a></li>
+                <li className='more' ><img  src={moreicon} alt="icon" /><a href="#" className={`${(fold)? "hiddenNavLink" : "NavLink"}`}>More</a></li>
             </ul>
         </nav>
     )

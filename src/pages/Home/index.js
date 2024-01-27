@@ -2,7 +2,7 @@ import NavigationBar from '../../components/Navigation/navigation';
 import Sugestion from '../../components/Suggestion/sugestion';
 import Content from '../../components/Reels/content';
 import profileImg from '../../assets/images/suggestion.PNG';
-
+import '../../components/Reels/reels.css'
 
 function App() {
 

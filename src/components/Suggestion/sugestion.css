@@ -156,3 +156,9 @@
 .sugFooter p{
     color:rgb(184, 182, 182) ;
 }
+
+@media screen and (max-width: 600px){
+    #sugestionBox{
+        display: none;
+    }
+}

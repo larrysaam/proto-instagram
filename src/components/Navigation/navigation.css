@@ -1,6 +1,5 @@
 .homeDiv{
     height: 100vh;
-
 }
 
 #nav{
@@ -114,4 +113,85 @@
     height: 30px;
     width: 30px;
     border-radius: 15px;
+}
+
+
+
+@media screen and (max-width: 600px){
+        
+    #nav{
+        transition: 0.7s;
+        height: 50px;
+        width: 100%;
+        background-color: black;
+        top: auto;
+        bottom: 0;
+        display: flex;
+        position: absolute;
+        z-index: 3;
+        /* width: 70px; */
+    }
+
+    #navFold{
+        transition: 0.7s;
+        height: 50px;
+        min-width: 100%;
+        display: flex;
+        position: absolute;
+        z-index: 5;
+        bottom: 0;
+        top: auto;
+        justify-content: space-around;
+        margin-bottom: -40px;
+    }
+
+    .NavList{
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .NavListFold{
+        width: 100%;
+        margin-left: -20px;
+        display: flex;
+        justify-content: space-around;
+    }
+
+        
+    .NavList li{
+        height: 30px;
+        width: 40px;
+        margin-bottom: 25px;
+        align-items: center;
+        display: flex;
+        text-align: center;
+        font-size: 0;
+        margin-top: -10px;
+        border-radius: 15px;
+    }
+
+    .NavListFold li{
+        height: 40px;
+        width: 40px;
+        margin-bottom: 25px;
+        align-items: center;
+        display: flex;
+        text-align: center;
+        font-size: 0;
+        margin-top: -10px;
+        border-radius: 15px;
+    }
+
+    .NavList li:hover{
+        background: none;
+    }
+
+    .notifbtn, .more, .iglogo, .logoimg{
+        transform: scale(0);
+        display: none;
+        position: absolute;
+    }
+
+
 }

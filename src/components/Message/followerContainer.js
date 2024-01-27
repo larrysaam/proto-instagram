@@ -41,9 +41,7 @@ const FollowerContainer =()=>{
                         <li className='messagestatus'>Active now</li>
                     </ul>
                 </div>
-            </li>
-
-            
+            </li> 
         </ul>
     )
 }
