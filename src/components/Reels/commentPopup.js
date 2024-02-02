@@ -3,21 +3,15 @@ import likeIcon from '../../assets/images/likeIcon.PNG'
 import commentIcon from '../../assets/images/commentIcon.PNG'
 import messageIcon from '../../assets/images/messageIcon.PNG'
 import saveIcon from '../../assets/images/saveIcon.PNG'
-import likedIcon from '../../assets/images/heart.png'
-import postimg from '../../assets/images/falcon_rocket.jpg'
+import checkAccessTokens from '../../utils/checkAccessToken'
 import Comment from "../comment";
-import verifyIfLike from '../../utils/verifyIfLike'
-import useFetchLikeDetails from '../../hooks/useFetchLikeDetails'
-import postComment from '../../utils/comment'
-import UnlikePost from '../../utils/UnlikedPost'
-import LikePost from '../../utils/LikedPost'
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
 const CommentPopup=({setPopup, postdata})=>{
 
-    const username = "Larrien"
-    const url = 'http://localhost:8080/likes'
-    const {response, loading, error} = useFetchLikeDetails(url + "/" + postdata.id)
+    const navigate = useNavigate()
     const [comments, setComments] = useState()
     const [newcomment, setNewcomment] = useState('')
     const [postlikes, setpostlikes] = useState()
@@ -25,7 +19,7 @@ const CommentPopup=({setPopup, postdata})=>{
     let store =[]
 
     useEffect(()=>{
-        console.log("id :"+ postdata.id)
+        console.log("id :"+ postdata._id)
         setComments(postdata.comments)
         setpostlikes(postdata.likes)
         // let verify = verifyIfLike(username, response.likedUsers)
@@ -34,51 +28,31 @@ const CommentPopup=({setPopup, postdata})=>{
 
 
     //add new comment to list of existing comments of this post with id
-    const addNewComment =(e)=>{
+    const addNewComment = async(e)=>{
         e.preventDefault()
-        if(postComment( newcomment, postdata)){
-            setComments([...comments, newcomment])
-        }else{
-            
-        }
+
+        const token = localStorage.getItem('token');
+        const headers = {'Content-Type': 'application/json', Authorization: `Bearer ${token}`};
+
+        await axios.patch("http://localhost:5000/comment",
+            { "id": postdata._id, "comment": newcomment, "comments_num": postdata.comments_num },
+            { headers: headers }
+        ).then((response) => {
+            //navigate to login if token expired else add comment
+            const verifyAccess = checkAccessTokens(response)
+            if(verifyAccess){
+                navigate('/Login')
+            }else{
+                //increment comment number by 1
+                setComments([...comments, newcomment])
+                postdata.comments_num += 1
+            }
+        }).catch((error) => {
+            console.log(error)
+        })
+        
+        
     }
-
-    // //like post
-    // const addLike = async(Id, username)=>{ 
-    //     let res = true
-    //     res = LikePost(Id, response, postdata, username)
-    //     if(res){
-    //         console.log("like Before ::: "+liked)
-    //         setLiked([...liked, Id])
-    //         console.log(Id)
-    //         setTimeout(() => {
-    //             console.log("like After:::: "+liked)
-    //         }, 1000);
-            
-    //     }
-    // }
-
-
-    // //unlike post
-    // const unLike = async(Id, username)=>{ 
-    //     let res = false
-    //     res = UnlikePost(Id, response, postdata, username)
-    //     if(res){
-    //         var newlike = liked.filter(f => f!==Id) 
-    //         setLiked(newlike)
-    //         console.log("newlike:::: "+newlike)
-            
-    //         setTimeout(() => {
-    //             console.log("like:::: "+liked)
-    //         }, 1000);
-    //     }
-    // }
-
-
-    // // if user already liked video, unlike and visevesa
-    // const likebtnClicked = (id, username)=>{ 
-    //     (verifyIfLike(username, response.likedUsers))?  unLike(postdata.id, username) : addLike(postdata.id, username)
-    // }
 
 
     return(
@@ -86,15 +60,15 @@ const CommentPopup=({setPopup, postdata})=>{
                 <button className="close-popup-btn" onClick={()=>setPopup(false)}>X</button>
                 <div className="inner-message">
                     <div className="inner-popup-image-container">
-                        <img src={postimg} alt="image" id="popup-comment-img"/>
+                        <img src={"http://localhost:5000/"+postdata.post_image} alt="image" id="popup-comment-img"/>
                     </div>
                     <div className="right-side-popup">
                         <div className="comment-list-contianer">
                             <ul>
                                 {comments &&
-                                    comments.map((postcomment)=>{
+                                    comments.map((postcomment, index)=>{
                                         return(
-                                            <li><Comment messageText={postcomment} username="saam"/></li>
+                                            <li><Comment messageText={postcomment} username="saam" key={index}/></li>
                                         )
                                     })
                                 }
@@ -112,7 +86,7 @@ const CommentPopup=({setPopup, postdata})=>{
                                     <img src={saveIcon} alt='saveicon' className='comment-saveicon'/>
                                 </div>
                                 <div className="like-text-container">
-                                    <h4 className="likes-text">{postlikes} {(postlikes<=1)? "Like": "Likes"}</h4>
+                                    <h4 className="likes-text">{postdata.likes_num} {(postdata.likes_num<=1)? "Like": "Likes"}</h4>
                                 </div>
                                 <div className="comment-input-container">
                                     <form>

@@ -1,7 +1,6 @@
 import './reels.css';
 import spacex from '../../assets/images/spacex.jpg'
 import nasa from '../../assets/images/nasa.jpg'
-import Image from '../../assets/images/Image.PNG'
 import likedIcon from '../../assets/images/heart.png'
 import likeIcon from '../../assets/images/likeIcon.PNG'
 import TapLikeIcon from '../../assets/images/taplikeicon.png'
@@ -10,41 +9,59 @@ import messageIcon from '../../assets/images/messageIcon.PNG'
 import saveIcon from '../../assets/images/saveIcon.PNG'
 import smileIcon from '../../assets/images/smillIcon.PNG'
 import useFetchLikeDetails from '../../hooks/useFetchLikeDetails';
+import checkAccessTokens from '../../utils/checkAccessToken'
 import LikePost from '../../utils/LikedPost';
 import UnlikedPost from '../../utils/UnlikedPost';
+import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import getPostLikes from '../../utils/UnlikedPost';
 import postComment from '../../utils/comment';
 
 
 const Reels =({reelposts, setPopup, setPostdata})=>{
 
-    const likesURL = 'http://localhost:8080/likes';
+    const likesURL = 'http://localhost:5000/likes';
     const {response, loading, error} = useFetchLikeDetails(likesURL)
     const [liked, setLiked] = useState([]);
+    const [myId, setMyId] = useState('')
     const [newcomment, setNewcomment] = useState('')
 
-    useEffect(()=>{
-        setLiked([])
-        update()
+    const navigate = useNavigate()
 
+    useEffect(()=>{
+        if(!loading){
+            const user_id = localStorage.getItem('user_id')
+            setMyId(user_id)
+            setLiked([])
+            update()
+        }else{
+
+        }
+        
     },[response, reelposts])
 
 
     // verify if login user has liked the post.
-    const verifyIfLiked = (Id, username) =>{
+    const verifyIfLiked = (Id, user_id) =>{
         let verified
         //get only the details of post with id (Id) from *likes* DB
-        let FilteredLikes = response.filter(f => f.id == Id)
-        let values = FilteredLikes[0].likedUsers
+        let FilteredLikes = reelposts.filter(f => f._id === Id)
+        let values = FilteredLikes[0].likes
+        console.log( values)
         //loop through array of users who liked th post to find name of current user.
-        for(let i=0; i<values.length; i++){
-            if(values[i] === username){
-                verified = true
-                break
-            }else{
-                verified = false
-            }
-        } 
+        if(values.length>0){
+            for(let i=0; i<values.length; i++){
+                if(values[i] === user_id){
+                    verified = true
+                    break
+                }else{
+                    verified = false
+                }
+            } 
+        }else{
+            verified = false
+        }
+        
 
         return verified
     }
@@ -54,9 +71,9 @@ const Reels =({reelposts, setPopup, setPostdata})=>{
         if(response){
             var arr = []
             reelposts.forEach(reel => {
-                var value = verifyIfLiked(reel.id, "Larrien")
+                var value = verifyIfLiked(reel._id, myId)
                 if(value){
-                    var Id = reel.id
+                    var Id = reel._id
                     setLiked(liked => ([...liked, Id]))
                 }
         
@@ -66,51 +83,42 @@ const Reels =({reelposts, setPopup, setPostdata})=>{
 
 
 
-    //like post
-    const addLike = async(Id, username)=>{ 
-        let res = true
-        res = LikePost(Id, response, reelposts, username)
-        if(res){
-            console.log("like Before ::: "+liked)
-            setLiked([...liked, Id])
-            console.log(Id)
-            setTimeout(() => {
-                console.log("like After:::: "+liked)
-            }, 1000);
-            
-        }
-    }
-
-
-    //unlike post
-    const unLike = async(Id, username)=>{ 
-        let res = false
-        res = UnlikedPost(Id, response, reelposts, username)
-        if(res){
-            var newlike = liked.filter(f => f!==Id) 
-            setLiked(newlike)
-            console.log("newlike:::: "+newlike)
-            
-            setTimeout(() => {
-                console.log("like:::: "+liked)
-            }, 1000);
-        }
-    }
-
-
     //double click to like post
-    const doubleclick = (Id, username) =>{
-        let newlike = []
-        newlike = liked.filter(f => f===Id) 
-        if(newlike.length<=0){
-            addLike(Id, username)
-        }        
+    const doubleclick = (reel, user_id) =>{
+        likebtnClicked(reel, user_id)
     }
 
 
     // if user already liked video, unlike and visevesa
-    const likebtnClicked = (id, username)=>{ 
-        (verifyIfLiked(id, username))?  unLike(id, username) : addLike(id, username)
+    const likebtnClicked = async(reel, user_id)=>{ 
+        //retrieve likes for this post
+        //Then, either LIKE or UNLIKE post and get response (res)
+        let likes = await getPostLikes(reel._id)
+        var res = await LikePost(reel, likes, user_id)
+        
+        //navigate to login if token expired else add comment to UI
+        const verifyAccess = checkAccessTokens(res)
+        if(verifyAccess){
+                navigate('/Login')
+        }else{
+            if(res.data.status === 200){
+
+                //increment number of likes
+                setLiked(()=>[...liked, reel._id])
+                reel.likes_num = reel.likes_num + 1
+
+            }else if(res.data.status === 201){
+
+                //decrement number of likes
+                var newlike = liked.filter(f => f!==reel._id) 
+                setLiked(newlike)
+                reel.likes_num = reel.likes_num - 1
+                
+            }else{
+                console.log(res)
+            }
+        }
+        
     }
 
 
@@ -145,7 +153,7 @@ const Reels =({reelposts, setPopup, setPostdata})=>{
                 className='profileImage'
                 />
                 <ul>
-                    <li className='reelName'>{reel.name}</li>
+                    <li className='reelName'>{reel.username}</li>
                     <li className='reelLocation'>{reel.location}</li>
                     {/* <img src={optionIcon} alt='' className='more'/> */}
                 </ul>
@@ -155,7 +163,7 @@ const Reels =({reelposts, setPopup, setPostdata})=>{
             {/* image */}
             <div className='PostImage'>
                 <img  src={TapLikeIcon}  alt='likeicon' id='taplikeicon'/>
-                <img src={Image} alt='not available' className='reelImage' onClick={()=>doubleclick(reel.id, "Larrien")}/>
+                <img src={"http://localhost:5000/"+reel.post_image} alt='not available' className='reelImage' onDoubleClick={()=>doubleclick(reel, myId)}/>
             </div>
            
             {/* options, comments and likes */}
@@ -165,19 +173,19 @@ const Reels =({reelposts, setPopup, setPostdata})=>{
                     <li>
                         {/* like and unlike when heart is pressed*/}
                         {
-                            (liked && liked[index] === reel.id)?
-                            <img  src={ likedIcon } onClick={()=>likebtnClicked(reel.id, "Larrien")} alt='likeicon' className='reelOptionIcon'/>
+                            ((liked.length>0 ) && (liked[index] === reel._id))?
+                            <img  src={ likedIcon } onClick={()=>likebtnClicked(reel, myId)} alt='likeicon' className='reelOptionIcon'/>
                             :
-                            <img  src={ likeIcon } onClick={()=>likebtnClicked(reel.id, "Larrien")} alt='likeicon' className='reelOptionIcon'/>
+                            <img  src={ likeIcon } onClick={()=>likebtnClicked(reel, myId)} alt='likeicon' className='reelOptionIcon'/>
                         }
                     </li>   
                     <li> <img src={commentIcon} alt='commenticon' className='reelOptionIcon'/></li>
                     <li> <img src={messageIcon} alt='messageicon' className='reelOptionIcon'/></li>
                     <img src={saveIcon} alt='saveicon' className='save'/>
                 </ul>
-                <p className='reelLikes'>{reel.likes} likes</p>
+                <p className='reelLikes'>{reel.likes_num} {(reel.likes_num<=1)? " like": " likes"}</p>
                 <p className='reelDesc'><b>{reel.name} </b> {reel.description}</p>
-                <button onClick={()=>{seeAllComments(reel)}} className='viewcomments'>View all {reel.commentnumbers} comments</button>
+                <button onClick={()=>{seeAllComments(reel)}} className='viewcomments'>View all {reel.comments_num} comments</button>
                 <p className='reelDate'>{reel.date}</p>
             </div>
 

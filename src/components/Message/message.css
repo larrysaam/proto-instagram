@@ -141,6 +141,71 @@
 }
 
 
+.message_text_box_area{
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    overflow-y: scroll;
+    overflow-x: none;
+    position: relative;
+}
+
+.message_send_div{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    padding-right: 20px;
+}
+
+.message_receive_div{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    padding-left: 20px;
+}
+
+#message_text{
+    height: 30px;
+    max-width: 400px;
+    color: white;
+    background-color: rgb(0, 102, 255);
+    padding: 5px 15px;
+    border-radius: 20px;
+}
+
+.message_bottom_input_container{
+    width: 100%;
+    height: 50px;
+    bottom: 0;
+    position: absolute;
+    background-color: black;
+    display: flex;
+}
+
+#input_textarea_message{
+    min-width: 90%;
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.777);
+    padding-left: 20px;
+    color: rgba(255, 255, 255, 0.798);
+    font-size: 16px;
+}
+
+#send_message_btn{
+    width: 10%;
+    background-color: rgba(0, 89, 255, 0.814);
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+
 @media screen and (max-width: 600px){
     /* message box */
     .mainmessagebox{

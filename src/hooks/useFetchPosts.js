@@ -16,7 +16,8 @@ const useFetchPosts = (url)=>{
         try {
             const res = await fetch(url)
             const posts = await res.json()
-                setResponse(posts) 
+            console.log(posts.data.data)
+                setResponse(posts.data.data) 
         } catch (error) {
                 setError(error)
         }finally{

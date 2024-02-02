@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import axios from "axios";
 
 const useFetchUserInfo = (url)=>{
     const [response, setResponse] = useState({})
@@ -13,16 +14,21 @@ const useFetchUserInfo = (url)=>{
 
     const fetchInfo = async()=>{
         setLoading(true)
-        try {
-            const res = await fetch(url)
-            const info = await res.json()
-            console.log(info)
-            setResponse(info)
-        } catch (error) {
-            setError(error)
-        }finally{
+        const token = localStorage.getItem('token');
+        const headers = {'Content-Type': 'application/json', Authorization: `Bearer ${token}`};
+        await axios.get(
+            url,
+            {headers: headers }
+         )
+         .then(response => {
+            setResponse(response)
             setLoading(false)
-        }
+         }) 
+         .catch(err => {
+            setError(err)
+            setLoading(false)
+         });
+
     }
 
     return {response, loading, error}

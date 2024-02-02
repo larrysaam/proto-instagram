@@ -4,13 +4,14 @@ import Reels from "../Reels/reels";
 import useFetchPosts from "../../hooks/useFetchPosts";
 import { useState,useEffect } from "react";
 import CommentPopup from "./commentPopup";
+import LoadingPage from "../Loading/loading";
 import './reels.css'
 
 
 
 const Content = () =>{
 
-    const postURL ="http://localhost:8080/posts";
+    const postURL ="http://localhost:5000/posts";
     const {response, error, loading} = useFetchPosts(postURL)
     const [popup, setPopup] = useState(false)
     const [postdata, setPostdata] = useState([])
@@ -22,7 +23,7 @@ const Content = () =>{
     return(
         <div id='ContentDiv'>
             <Story />
-            {loading && <img src={loadingLogo} alt=""/>}
+            {loading &&  <LoadingPage/>}
             {error && <p>Something went wrong</p>}
             {response && <Reels reelposts={response} setPopup={setPopup} setPostdata={setPostdata}/>}
             {(popup)? <CommentPopup setPopup={setPopup} postdata={postdata}/> : ""}

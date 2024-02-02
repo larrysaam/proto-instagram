@@ -1,7 +1,8 @@
 import './message.css'
 import FollowerContainer from './followerContainer'
 
-const MessageList =()=>{
+const MessageList =({setOpenMessage, setInitiator, setReceptor})=>{
+
 
     return(
         <div className="listcontainer">
@@ -17,7 +18,7 @@ const MessageList =()=>{
                 
             </div>
             <div className="list">
-                    <FollowerContainer />
+                    <FollowerContainer  setOpenMessage={setOpenMessage} setInitiator={setInitiator} setReceptor={setReceptor}/>
             </div>
         </div>
     )

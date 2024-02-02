@@ -9,6 +9,18 @@
     justify-content: center;
 }
 
+
+.popup_share_post_container{
+    height: 80%;
+    width: 60%;
+    background-color: black;
+    border-radius: 20px;
+    border: 1px solid rgb(204, 0, 255);
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
 .inner-create-container{
     height: 80%;
     width: 35%;
@@ -22,6 +34,10 @@
 
 .inner-create-header hr{
     width: 100%;
+}
+
+.inner-create-header{
+
 }
 
 .inner-create-header h3{
@@ -45,9 +61,14 @@
     font-size: 20px;
 }
 
-.inner-create-main-box div button{
+#input_post{
+    display: none;
+}
+
+.inner-create-main-box div .file_btn{
     width: 200px;
     height: 40px;
+    padding: 10px;
     border: none;
     border-radius: 10px;
     background-color: rgb(0, 110, 255);
@@ -71,6 +92,78 @@
     color: white;
     font-size: 24px;
     cursor: pointer;
+}
+
+.main_share_popup_image_view{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+#post_image_view{
+    height: 100%;
+    width: 50%;
+    object-fit: cover;
+}
+
+.side_popup_description_area{
+    height: 100%;
+    width: 50%;
+    display: inline-block;
+}
+
+.top_input_desc_area{
+    height: 70%;
+    width: 100%;
+}
+
+.user_profile_pic_and_name{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: left;
+    padding-left: 20px;
+}
+
+.user_profile_pic_and_name img{
+    height: 30px;
+    width: 30px;
+    border: 2px solid rgb(217, 0, 255);
+    border-radius: 20px;
+}
+
+.user_profile_pic_and_name h4{
+    color: white;
+    margin-left: 10px;
+    line-height: 0px;
+}
+
+#description_txtarea{
+    height: 200px;
+    width: 90%;
+    border: none;
+    background: none;
+    color: rgba(255, 255, 255, 0.45);
+    font-size: 16px;
+    font-weight: 500;
+    padding: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.447);
+}
+
+.share_post_btn{
+    float: right;
+    margin-top: -40px;
+    margin-right: 20px;
+    background: none;
+    border: none;
+    color: rgb(0, 110, 255);
+    font-weight: 400;
+}
+
+.wordcount{
+    color:  rgba(255, 255, 255, 0.447);
+    text-align: right;
+    padding-right: 20px;
 }
 
 

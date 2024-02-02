@@ -151,6 +151,7 @@
     position: relative;
 }
 
+
 #taplikeicon{
     height: 100px;
     width: 100px;
@@ -199,6 +200,7 @@
     height: 100%;
     width: 100%;
     border-radius: 20px;
+    object-fit: cover;
 }
 
 .message-popup-options{

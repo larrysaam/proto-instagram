@@ -4,49 +4,81 @@ import './profile.css'
 import settingicon from '../../assets/images/setting icon.png'
 import StoryImg from '../../assets/images/lemon.png'
 import ProfileImg from '../../assets/images/spacex.jpg'
+import ProfilePopup from "./profilePopup"
 import Posts from "./posts"
+import checkAccessToken from "../../utils/checkAccessToken"
+import { useNavigate } from "react-router-dom"
 
 const ProfileInfo =()=>{
 
-    const url = 'http://localhost:8080/users/'
+    const user_id = localStorage.getItem('user_id')
+    const url = 'http://localhost:5000/user/'
     const [name, setName] = useState(null)
     const [postsnum, setPostsnum] = useState(null)
     const [followers, setFollowers] = useState(null)
     const [following, setFollowing] = useState(null)
     const [bio, setBio] = useState(null)
-    const {response, loading, error} = useFetchUserInfo(url + '001')
+    const [popup, setPopup] = useState(false)
+    const {response, loading, error} = useFetchUserInfo(url + user_id)
 
+    const [profileData, setProfileData] = useState({})
     const [post, setPost] = useState(true)
     const [saved, setSaved] = useState(false)
     const [tagged, setTagged] = useState(false)
 
+    const navigate = useNavigate()
+
+    // //set all useStates
+    // useEffect(()=>{
+    
+            
+    // },[response])
+
     useEffect(()=>{
-        console.log(response.posts)
-        setName(response.username)
-        setPostsnum(response.posts_num)
-        setFollowers(response.followers_num)
-        setFollowing(response.following_num)
-        setBio(response.bio)
+        console.log("loading ", loading)
+        if(!loading){
+            const verifyAccess =  checkAccessToken(response)
+            console.log(response)
+            if(verifyAccess){
+                navigate('/Login')
+            }else{
+                console.log(response)
+                setName(response.data.data.username)
+                setPostsnum(response.data.data.posts_num)
+                setFollowers(response.data.data.followers_num)
+                setFollowing(response.data.data.following_num)
+                setBio(response.data.data.bio)
+            }
+        }else{
+            
+        }
+        
+       
     },[response])
 
 
+    //Post toggle activate
     const activatePosts = (event)=>{
         setPost(true)
         setTagged(false)
         setSaved(false)
     }
 
+    //Saved toggle activate
     const activateSaved = ()=>{
         setPost(false)
         setTagged(false)
         setSaved(true)
     }
 
+    //Tagged toggle activate
     const activateTagged = ()=>{
         setPost(false)
         setTagged(true)
         setSaved(false)
     }
+
+        
 
 
     return(
@@ -55,7 +87,7 @@ const ProfileInfo =()=>{
             <div className="topDiv">
                 {/* user profile picture */}
                 <div className="profileimagediv">
-                    <img src={ProfileImg} alt='profile Image' id="profileImage"/>
+                    <img src={ProfileImg} alt='profile Image' id="profileImage" onClick={()=>setPopup(true)}/>
                 </div>
                 {/* user informations */}
                 <div className="info">
@@ -89,6 +121,7 @@ const ProfileInfo =()=>{
                 </ul>
             </div>
             <hr/>
+            {/* post section */}
         <div className="selection">
             <ul className="select-ul">
                 <li><button id={`${(post)? "active": null}`} onClick={(event)=>{activatePosts(event)}}>POSTS</button></li>
@@ -100,6 +133,9 @@ const ProfileInfo =()=>{
             <Posts postsid={response.posts}  saved={saved} tagged={tagged}/>
         </div>
         </div>
+        {
+            (popup)? <ProfilePopup setPopup={setPopup} user_id={"euei"}/> : ""
+        }
         </>
     )
 }

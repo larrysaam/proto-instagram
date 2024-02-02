@@ -9,6 +9,8 @@ import NavigationBar from './components/Navigation/navigation';
 import NotFound from './pages/NotFound/pagenotfound'
 import CreatePopup from './components/CreatePopup/createPopup';
 import Explore from './pages/Explore/Explore'
+import Login from './pages/Login/login';
+import Signup from './pages/Signup/signup';
 
 
 function App() {
@@ -22,6 +24,8 @@ function App() {
       {(showPopup)? <CreatePopup setShowPopup={setShowPopup}/> : ""}
       <Routes>
           <Route path='/' element={<Home/>}/>
+          <Route path='/login' element={<Login/>}/>
+          <Route path='/Signup' element={<Signup/>}/>
           <Route path='messages' element={<Messages/>}/>
           <Route path='profile' element={<Profile/>}/>
           <Route path='explore' element={<Explore/>}/>
@@ -29,15 +33,6 @@ function App() {
         </Routes>
     </div>
   )
-
-
-  // return(
-  //   <div className='mainComponent'>
-  //     <Image />
-  //     <Login /> 
-  //   </div>
-
-  // )
 }
 
 export default App;
