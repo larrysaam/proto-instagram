@@ -1,13 +1,15 @@
-import './reels.css'
-import likeIcon from '../../assets/images/likeIcon.PNG'
-import commentIcon from '../../assets/images/commentIcon.PNG'
-import messageIcon from '../../assets/images/messageIcon.PNG'
-import saveIcon from '../../assets/images/saveIcon.PNG'
-import checkAccessTokens from '../../utils/checkAccessToken'
-import Comment from "../comment";
+//functios && Libraries
+import '../reels.css'
 import axios from 'axios'
+import checkAccessTokens from '../../../utils/checkAccessToken'
+//components
+import BottomActionBox from './BottomActionBox'
+import SideCommentImage from './sideCommentImage'
+import Comment from "../../comment";
+//react 
 import { useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
+
 
 const CommentPopup=({setPopup, postdata})=>{
 
@@ -15,8 +17,7 @@ const CommentPopup=({setPopup, postdata})=>{
     const [comments, setComments] = useState()
     const [newcomment, setNewcomment] = useState('')
     const [postlikes, setpostlikes] = useState()
-    const [liked, setLiked] = useState(false)
-    let store =[]
+  
 
     useEffect(()=>{
         console.log("id :"+ postdata._id)
@@ -55,13 +56,19 @@ const CommentPopup=({setPopup, postdata})=>{
     }
 
 
+      /**
+     * ____________________Add Comment popup________________________
+     * 
+    */
     return(
         <div className="message-popup">
                 <button className="close-popup-btn" onClick={()=>setPopup(false)}>X</button>
                 <div className="inner-message">
-                    <div className="inner-popup-image-container">
-                        <img src={"http://localhost:5000/"+postdata.post_image} alt="image" id="popup-comment-img"/>
-                    </div>
+
+                    {/* _________side post image________ */}
+                    <SideCommentImage post_image={postdata.post_image}/>
+    
+                    {/* _________list of all comments made on post_________ */}
                     <div className="right-side-popup">
                         <div className="comment-list-contianer">
                             <ul>
@@ -74,27 +81,9 @@ const CommentPopup=({setPopup, postdata})=>{
                                 }
                             </ul>
                         </div>
-                        <div className="bottom-popup-div">
-                                <div className="message-popup-options">
-                                    <ul>
-                                        <li>
-                                            <img  src={ likeIcon } alt='likeicon' className='comment-reelOptionIcon'/>
-                                        </li>   
-                                        <li> <img src={commentIcon} alt='commenticon' className='comment-reelOptionIcon'/></li>
-                                        <li> <img src={messageIcon} alt='messageicon' className='comment-reelOptionIcon'/></li>
-                                    </ul>
-                                    <img src={saveIcon} alt='saveicon' className='comment-saveicon'/>
-                                </div>
-                                <div className="like-text-container">
-                                    <h4 className="likes-text">{postdata.likes_num} {(postdata.likes_num<=1)? "Like": "Likes"}</h4>
-                                </div>
-                                <div className="comment-input-container">
-                                    <form>
-                                        <input type="text" name="comment" placeholder="Add a comment..." onChange={(e)=>setNewcomment(e.target.value)} id="popup-comment-input"/>
-                                        <button type="submit" className="post-btn" onClick={(e)=>addNewComment(e)}>Post</button>
-                                    </form>
-                                </div>
-                            </div>
+
+                        {/* ___________Bottom comment, like , save section________________ */}
+                        <BottomActionBox likes_num={postdata.likes_num} addNewComment={addNewComment} setNewcomment={setNewcomment}/>
                     </div>
                 </div>
         </div>

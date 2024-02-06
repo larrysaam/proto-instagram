@@ -4,10 +4,9 @@ const Sugestion = ({profileImg, userName}) =>{
 
     var date =new Date().getFullYear();
 
-    return(
-        <div id="sugestionBox">
 
-            {/* profile */}
+    {/* _____________profile____________ */}
+    const profile = 
             <div className="profile">
                 <img src={profileImg} alt="" className="profileImg"/>
                 <ul className="userNames" >
@@ -18,7 +17,36 @@ const Sugestion = ({profileImg, userName}) =>{
                 <button type="submit" id="switchBtn" onAction="SwitchAccount()">Switch</button>
             </div>
 
-            {/* suggestion */}
+    
+
+    {/*___________ footer__________ */}
+    const footer = 
+            <div className='sugFooter'>
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Help</a></li>
+                    <li><a href="#">Press</a></li>
+                    <li><a href="#">API</a></li>
+                    <li><a href="#">Jobs</a></li>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Terms</a></li>
+                    <li><a href="#">Location</a></li>
+                    <li><a href="#">Language</a></li>
+                    <li><a href="#">Meta Verified</a></li>
+                </ul>
+
+                <p> &copy; {date} INSTAGRAM FROM META</p>
+            </div>
+
+
+
+    return(
+        <div id="sugestionBox">
+
+            {/* _____________profile____________ */}
+            {profile}
+
+            {/* ______________suggestions______________ */}
             <div className="sugestionDiv">
                 <ul>
                     <li style={{listStyle:"none"}}>
@@ -47,23 +75,8 @@ const Sugestion = ({profileImg, userName}) =>{
                     </li>
 
 
-                    {/* footer */}
-                    <div className='sugFooter'>
-                        <ul>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Help</a></li>
-                            <li><a href="#">Press</a></li>
-                            <li><a href="#">API</a></li>
-                            <li><a href="#">Jobs</a></li>
-                            <li><a href="#">Privacy</a></li>
-                            <li><a href="#">Terms</a></li>
-                            <li><a href="#">Location</a></li>
-                            <li><a href="#">Language</a></li>
-                            <li><a href="#">Meta Verified</a></li>
-                        </ul>
-
-                        <p> &copy; {date} INSTAGRAM FROM META</p>
-                    </div>
+                    {/*___________ footer__________ */}
+                    {footer}
 
                 </ul>
             </div>

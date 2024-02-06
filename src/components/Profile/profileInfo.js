@@ -1,60 +1,80 @@
 import { useState, useEffect } from "react"
+import axios from "axios"
 import useFetchUserInfo from "../../hooks/useFetchUserInfo"
 import './profile.css'
 import settingicon from '../../assets/images/setting icon.png'
 import StoryImg from '../../assets/images/lemon.png'
 import ProfileImg from '../../assets/images/spacex.jpg'
-import ProfilePopup from "./profilePopup"
+import ProfileUpdatePopup from "./profileUpdatePopup"
 import Posts from "./posts"
 import checkAccessToken from "../../utils/checkAccessToken"
+import FetchUserInfo from '../../utils/fetchUserInfo'
 import { useNavigate } from "react-router-dom"
 
-const ProfileInfo =()=>{
+const ProfileInfo =({searchProfile})=>{
 
-    const user_id = localStorage.getItem('user_id')
     const url = 'http://localhost:5000/user/'
-    const [name, setName] = useState(null)
-    const [postsnum, setPostsnum] = useState(null)
-    const [followers, setFollowers] = useState(null)
-    const [following, setFollowing] = useState(null)
-    const [bio, setBio] = useState(null)
-    const [popup, setPopup] = useState(false)
-    const {response, loading, error} = useFetchUserInfo(url + user_id)
 
-    const [profileData, setProfileData] = useState({})
+    const searched_id = localStorage.getItem('searched_userid')
+    const Myid = localStorage.getItem('user_id')
+    const token = localStorage.getItem('token');
+
+    const [popup, setPopup] = useState(false)
+    const [profileData, setProfileData] = useState([])
     const [post, setPost] = useState(true)
     const [saved, setSaved] = useState(false)
     const [tagged, setTagged] = useState(false)
+    const [followed, setFollowed] = useState(false)
+
 
     const navigate = useNavigate()
 
-    // //set all useStates
-    // useEffect(()=>{
-    
-            
-    // },[response])
 
+    //set all useStates
     useEffect(()=>{
-        console.log("loading ", loading)
-        if(!loading){
-            const verifyAccess =  checkAccessToken(response)
-            console.log(response)
-            if(verifyAccess){
-                navigate('/Login')
-            }else{
-                console.log(response)
-                setName(response.data.data.username)
-                setPostsnum(response.data.data.posts_num)
-                setFollowers(response.data.data.followers_num)
-                setFollowing(response.data.data.following_num)
-                setBio(response.data.data.bio)
+        getProfileResults()
+    },[])
+
+
+    //get profile details depending on user_id either account owner or searhed user
+    const getProfileResults = async()=>{
+
+        //if searched profile clicked, show searched user profile
+        if(!searchProfile){
+
+            const response = await FetchUserInfo(url + Myid)
+            //if response available, set profile details
+            if(response){
+                const verifyAccess =  checkAccessToken(response)
+                if(verifyAccess){
+                    navigate('/Login')
+                }else{
+                    setProfileData(response.data.data)
+                    verifyFollow(response.data.data)
+
+                }
             }
+
         }else{
-            
+
+            //get searched user id from storage and fetch info to display on UI
+            const response =  await FetchUserInfo(url + searched_id)
+            //if response available, set profile details
+            if(response){
+                //verify if Access Token is valid or not
+                const verifyAccess =  checkAccessToken(response)
+                if(verifyAccess){
+                    navigate('/Login')
+                }else{
+                    setProfileData(response.data.data)
+                    verifyFollow(response.data.data.followers)
+
+                }
+            }
+
         }
-        
        
-    },[response])
+    }
 
 
     //Post toggle activate
@@ -78,6 +98,49 @@ const ProfileInfo =()=>{
         setSaved(false)
     }
 
+
+    // verify if login user has liked the post.
+    const verifyFollow = (followers) =>{
+
+        let values = followers
+        console.log( followers)
+        //loop through array of users who liked th post to find name of current user.
+        if(values.length>0){
+            for(let i=0; i<values.length; i++){
+                if(values[i] === Myid){
+                    setFollowed(true)
+                    break
+                }else{
+                    setFollowed(false)
+                }
+            } 
+        }else{
+            setFollowed(false)
+        }
+   }
+
+
+   const follow = async()=>{
+        const headers = {'Content-Type': 'application/json', Authorization: `Bearer ${token}`};
+        await axios.patch(url+"follow",
+        {"follower": Myid, "followed": searched_id, "followers_num": profileData.followers_num, "following_num": profileData.following_num, "followers": profileData.followers },
+        {headers : headers}
+        )
+        .then((response) => {
+            // Code
+            const verifyAccess =  checkAccessToken(response)
+            if(verifyAccess){
+                navigate('/Login')
+            }else{
+                console.log(response)
+                setFollowed(true)
+            }
+            
+        }).catch((error) => {
+            // Code
+            console.log(error)
+        })  
+   }
         
 
 
@@ -87,26 +150,26 @@ const ProfileInfo =()=>{
             <div className="topDiv">
                 {/* user profile picture */}
                 <div className="profileimagediv">
-                    <img src={ProfileImg} alt='profile Image' id="profileImage" onClick={()=>setPopup(true)}/>
+                    <img src={"http://localhost:5000/"+ profileData.profile_picture} alt='profile Image' id="profileImage" onClick={()=>setPopup(true)}/>
                 </div>
                 {/* user informations */}
                 <div className="info">
                     <ul className="topprofile">
-                        <li><h2 id="username">{name}</h2></li>
+                        <li><h2 id="username">{profileData.username}</h2></li>
                         <ul>
-                            <li><button className="btn">Edit prorfile</button></li>
-                            <li><button className="btn">View archive</button></li>
+                            <li><button onClick={(!followed)? ()=>follow() : ""} className={(!followed)? (searchProfile)? "follow_user_btn": "btn" : " btn" }>{(!followed)? (searchProfile)? "Follow": "Edit Profile" : " Following" }</button></li>
+                            <li><button className="btn">{(searchProfile)? "Message" : "View archive" }</button></li>
                         </ul>
                         <li><button className="settingbtn"><img src={settingicon} alt='profile Image' id="settingicon"/></button></li>
                     </ul>
                     <ul className="pageinfo">
-                        <li><p>{postsnum} posts</p></li>
-                        <li><p>{followers} followers</p></li>
-                        <li><p>{following} following</p></li>
+                        <li><p>{profileData.posts_num} posts</p></li>
+                        <li><p>{profileData.followers_num} followers</p></li>
+                        <li><p>{profileData.following_num} following</p></li>
                     </ul>
                     <ul className="buttominfo">
-                        <li><h4 className="profilename"> {name}</h4></li>
-                        <li><h4 className="bio"> {bio} </h4></li>
+                        <li><h4 className="profilename"> {profileData.username}</h4></li>
+                        <li><h4 className="bio"> {profileData.bio} </h4></li>
                     </ul>            
                 </div>
             </div>
@@ -130,11 +193,11 @@ const ProfileInfo =()=>{
             </ul>
         </div>
         <div className="bottomContentDiv">
-            <Posts postsid={response.posts}  saved={saved} tagged={tagged}/>
+            <Posts postsid={profileData.posts}  saved={saved} tagged={tagged}/>
         </div>
         </div>
         {
-            (popup)? <ProfilePopup setPopup={setPopup} user_id={"euei"}/> : ""
+            (popup)? <ProfileUpdatePopup setPopup={setPopup} user_id={"euei"}/> : ""
         }
         </>
     )

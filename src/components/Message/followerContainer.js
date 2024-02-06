@@ -2,6 +2,7 @@ import './message.css'
 import profileimg from '../../assets/images/nasa.jpg'
 import { useEffect, useState } from 'react'
 import checkAccessToken from '../../utils/checkAccessToken'
+import FetchUserInfo from '../../utils/fetchUserInfo'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
@@ -42,10 +43,31 @@ const FollowerContainer =({setOpenMessage, setReceptor, setInitiator})=>{
         })
     }
 
-    const handleClick =(receptor, initiator)=>{
-        setOpenMessage(true)
+
+    const handleClick =async(id, receptor, initiator)=>{
+        var res = {}
         setInitiator(initiator)
         setReceptor(receptor)
+
+        if(initiator === myId){
+            res =await FetchUserInfo(`http://localhost:5000/user/${receptor}`)
+        }else{
+            res = await FetchUserInfo(`http://localhost:5000/user/${initiator}`)
+        } 
+        localStorage.setItem("messager_name", res.data.data.username)
+        localStorage.setItem("messager_photo", res.data.data.profile_picture)
+        localStorage.setItem("message_id", id)
+        setOpenMessage(true)
+
+    }
+
+    const getUserName = async(id)=>{
+        const  res = await FetchUserInfo(`http://localhost:5000/user/${id}`)
+        if(res){
+            return res.data.data.username
+        }else{
+            return ""
+        }
     }
 
 
@@ -65,10 +87,10 @@ const FollowerContainer =({setOpenMessage, setReceptor, setInitiator})=>{
             {/* loop through all contacts. Either message receptor or initiator */}
             {
                 (data)?
-                data.map(data=>{
+                data.map((data)=>{
                     return(
                         <li >
-                            <div className="followercontainer" onClick={()=>handleClick( data.receptor, data.initiator )}>
+                            <div className="followercontainer" onClick={()=>handleClick( data._id, data.receptor, data.initiator )}>
                                 <img src={profileimg} alt="" id="followerimg"/>
                                 <ul>
                                     {/* display only name of other chat users  */}

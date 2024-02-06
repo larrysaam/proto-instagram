@@ -10,7 +10,7 @@ const Posts = ({postsid, saved, tagged})=>{
             {postsid && 
                 postsid.map((postimg, index)=>{
                     return(
-                        <img src={(postimg === "21df909")? image : null} alt={postimg} id='postimage'/>
+                        <img src={(postimg === "21df909")? image : null} alt={postimg} id='postimage' key={index}/>
                     )
                 })
             }

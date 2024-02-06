@@ -61,8 +61,6 @@ const Reels =({reelposts, setPopup, setPostdata})=>{
         }else{
             verified = false
         }
-        
-
         return verified
     }
 
@@ -83,13 +81,13 @@ const Reels =({reelposts, setPopup, setPostdata})=>{
 
 
 
-    //double click to like post
+    //|________Double click to like post_____________|
     const doubleclick = (reel, user_id) =>{
         likebtnClicked(reel, user_id)
     }
 
 
-    // if user already liked video, unlike and visevesa
+    //||_________ if user already liked video, unlike and visevesa_________||
     const likebtnClicked = async(reel, user_id)=>{ 
         //retrieve likes for this post
         //Then, either LIKE or UNLIKE post and get response (res)
@@ -131,6 +129,7 @@ const Reels =({reelposts, setPopup, setPostdata})=>{
             
         }
     }
+    
 
     const seeAllComments =(reel)=>{
         setPostdata(reel)
@@ -138,7 +137,7 @@ const Reels =({reelposts, setPopup, setPostdata})=>{
     }
 
 
-    //reels 
+    //reels post container
     var reel = reelposts.map((reel, index) =>
         <div key={reel.id} className='reelDiv'>
 
@@ -160,18 +159,18 @@ const Reels =({reelposts, setPopup, setPostdata})=>{
                 
             </div>
 
-            {/* image */}
+            {/*_________ image____________ */}
             <div className='PostImage'>
                 <img  src={TapLikeIcon}  alt='likeicon' id='taplikeicon'/>
-                <img src={"http://localhost:5000/"+reel.post_image} alt='not available' className='reelImage' onDoubleClick={()=>doubleclick(reel, myId)}/>
+                <img src={"https://tiny-erin-kingfisher-toga.cyclic.app/"+reel.post_image} alt='not available' className='reelImage' onDoubleClick={()=>doubleclick(reel, myId)}/>
             </div>
            
-            {/* options, comments and likes */}
+            {/*_________ options, comments and likes_________ */}
             <div className='options'>
                 <ul>
                     
                     <li>
-                        {/* like and unlike when heart is pressed*/}
+                        {/*____________ like and unlike when heart ________*/}
                         {
                             ((liked.length>0 ) && (liked[index] === reel._id))?
                             <img  src={ likedIcon } onClick={()=>likebtnClicked(reel, myId)} alt='likeicon' className='reelOptionIcon'/>
@@ -189,7 +188,7 @@ const Reels =({reelposts, setPopup, setPostdata})=>{
                 <p className='reelDate'>{reel.date}</p>
             </div>
 
-            {/* add comments */}
+            {/* _________add comments_________ */}
             <div className='addComment'>
                 <form >
                     <img src={smileIcon}  alt='smileicon'className='commentIcon' for='comment'/>

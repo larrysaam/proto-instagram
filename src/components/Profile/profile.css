@@ -54,7 +54,21 @@
     font-weight: 100;
 }
 
-.btn{
+.info .follow_user_btn{
+    width: 120px;
+    height: 30px;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    background-color: rgb(0, 140, 255);
+    font-weight: 700;
+    border-radius: 10px;
+    border: none;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.info .btn{
     width: 120px;
     height: 30px;
     font-size: 14px;

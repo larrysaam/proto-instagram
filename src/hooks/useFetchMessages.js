@@ -1,7 +1,7 @@
 import axios from "axios"
 import { useState, useEffect } from "react"
 
-const useFetchMessages =(url, user_id)=>{
+const useFetchMessages =(url)=>{
     const [response, setResponse] = useState([])
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState('')
@@ -18,6 +18,7 @@ const useFetchMessages =(url, user_id)=>{
         await axios.get(url,
         {headers: headers})
         .then(res=>{
+            console.log(res)
             setLoading(false)
             setResponse(res)
         })

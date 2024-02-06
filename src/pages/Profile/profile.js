@@ -4,19 +4,11 @@ import './profile.css'
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 
-function Profile() {
+function Profile({searchProfile}) {
 
-  const navigate = useNavigate()
-
-  //useEffect
-  useEffect(()=>{
-    if(!localStorage.getItem('token')){
-      navigate('/Login')
-    }
-  })
 
   return(
-    <ProfileInfo />   
+    <ProfileInfo  searchProfile={searchProfile}/>   
   )
 }
 

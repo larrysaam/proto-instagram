@@ -1,0 +1,88 @@
+.searched_page_main_box{
+    width: 80%;
+    height: 100%;
+}
+
+.search_user_side_box{
+    width: 30%;
+    height: 100%;
+    float: left;
+    display: inline-block;
+    background-color: black;
+}
+
+.search_user_side_box h3{
+    color: white;
+    font-size: 24px;
+    font-weight: 500;
+    text-align: left;
+    padding-left: 15px;
+    padding: 20px 25px;
+}
+
+.search_bar_div{
+    width: 100%;
+    height:60px;
+    display: flex;
+    justify-content: center;
+}
+
+#search_bar_input{
+    height: 30px;
+    min-width: 80%;
+    color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(67, 67, 67, 0.701);
+    border: none;
+    font-size: 14px;
+    padding: 5px 0;
+    border-radius: 10px;
+    padding-left: 10px;
+}
+
+.searched_user_container_list{
+    width: 100%;
+    height: 100%;
+    display: inline;
+    overflow-y: scroll;
+}
+
+.searched_user_container_list::-webkit-scrollbar{
+    background-color: rgba(125, 124, 124, 0.446);
+}
+
+.searched_user_container_list ul{
+    display: inline;
+}
+
+.searched_user_container_list ul li{
+    list-style: none;
+}
+
+
+
+/* user profile searched container */
+.searched_user_profilr_box{
+    width: 90%;
+    height: 60px;
+    background-color: none;
+    display: flex;
+    justify-content: left;
+}
+
+.search_prof_img{
+    height: 50px;
+    width: 50px;
+    border-radius: 30px;
+    border: none;
+    object-fit: fill;
+    margin-left: 20px;
+}
+
+.searched_username_h4{
+    color: white;
+    margin-left: 20px;
+    margin-top: 0px;
+    text-align: center;
+    align-self: center;
+}
+

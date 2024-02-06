@@ -11,24 +11,27 @@ import CreatePopup from './components/CreatePopup/createPopup';
 import Explore from './pages/Explore/Explore'
 import Login from './pages/Login/login';
 import Signup from './pages/Signup/signup';
+import Search from './pages/Search';
 
 
 function App() {
 
   const [showPopup, setShowPopup] = useState(false)
+  const [searchProfile, setSearchProfile] = useState(false)
 
 
   return(
     <div className='main-app-container'>
-      <NavigationBar setShowPopup={setShowPopup}/>
+      <NavigationBar setShowPopup={setShowPopup} setSearchProfile={setSearchProfile}/>
       {(showPopup)? <CreatePopup setShowPopup={setShowPopup}/> : ""}
       <Routes>
           <Route path='/' element={<Home/>}/>
           <Route path='/login' element={<Login/>}/>
           <Route path='/Signup' element={<Signup/>}/>
           <Route path='messages' element={<Messages/>}/>
-          <Route path='profile' element={<Profile/>}/>
+          <Route path='profile' element={<Profile searchProfile={searchProfile}/>}/>
           <Route path='explore' element={<Explore/>}/>
+          <Route path='search' element={<Search setSearchProfile={setSearchProfile}/>}/>
           <Route path='*' element={<NotFound/>}/>
         </Routes>
     </div>

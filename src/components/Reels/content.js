@@ -1,9 +1,8 @@
 import Story from "../Story/story";
-import loadingLogo from '../../assets/images/instagram logo.PNG'
 import Reels from "../Reels/reels";
 import useFetchPosts from "../../hooks/useFetchPosts";
 import { useState,useEffect } from "react";
-import CommentPopup from "./commentPopup";
+import CommentPopup from "./CommentPopup/commentPopup";
 import LoadingPage from "../Loading/loading";
 import './reels.css'
 
@@ -11,7 +10,7 @@ import './reels.css'
 
 const Content = () =>{
 
-    const postURL ="http://localhost:5000/posts";
+    const postURL ="https://tiny-erin-kingfisher-toga.cyclic.app/posts";
     const {response, error, loading} = useFetchPosts(postURL)
     const [popup, setPopup] = useState(false)
     const [postdata, setPostdata] = useState([])

@@ -1,0 +1,109 @@
+Date : 2024-02-02 13:11:44
+Directory : c:\Users\LARRIEN\Desktop\Portfolio\MERN\Instagram\instagram\src
+Total : 59 files,  3427 codes, 76 comments, 692 blanks, all 4195 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| CSS        |         19 |      1,995 |         18 |        378 |      2,391 |
+| JavaScript |         40 |      1,432 |         58 |        314 |      1,804 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++---------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                    | files      | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                       |         59 |      3,427 |         76 |        692 |      4,195 |
+| . (Files)                                                                                               |          3 |         69 |          0 |         12 |         81 |
+| components                                                                                              |         30 |      2,480 |         54 |        507 |      3,041 |
+| components (Files)                                                                                      |          2 |         74 |          0 |         17 |         91 |
+| components\CreatePopup                                                                                  |          2 |        237 |          3 |         39 |        279 |
+| components\Explore                                                                                      |          2 |         29 |          0 |          7 |         36 |
+| components\Loading                                                                                      |          2 |         26 |          0 |          5 |         31 |
+| components\Message                                                                                      |          4 |        353 |         12 |         81 |        446 |
+| components\Navigation                                                                                   |          2 |        207 |          3 |         43 |        253 |
+| components\Notification                                                                                 |          3 |         90 |          1 |         17 |        108 |
+| components\Profile                                                                                      |          5 |        572 |         13 |        105 |        690 |
+| components\Reels                                                                                        |          4 |        608 |         19 |        133 |        760 |
+| components\Story                                                                                        |          2 |         89 |          1 |         19 |        109 |
+| components\Suggestion                                                                                   |          2 |        195 |          2 |         41 |        238 |
+| controller                                                                                              |          1 |          0 |          0 |          1 |          1 |
+| hooks                                                                                                   |          5 |        129 |          7 |         35 |        171 |
+| pages                                                                                                   |         13 |        673 |          9 |        112 |        794 |
+| pages\Explore                                                                                           |          2 |         66 |          0 |         10 |         76 |
+| pages\Home                                                                                              |          1 |         22 |          0 |          6 |         28 |
+| pages\Login                                                                                             |          2 |        219 |          5 |         37 |        261 |
+| pages\Messages                                                                                          |          2 |         38 |          0 |         10 |         48 |
+| pages\NotFound                                                                                          |          2 |         46 |          0 |          7 |         53 |
+| pages\Profile                                                                                           |          2 |         24 |          1 |          6 |         31 |
+| pages\Signup                                                                                            |          2 |        258 |          3 |         36 |        297 |
+| simple project                                                                                          |          2 |         16 |          0 |          4 |         20 |
+| utils                                                                                                   |          5 |         60 |          6 |         21 |         87 |
++---------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++---------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                                                | language   | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| c:\Users\LARRIEN\Desktop\Portfolio\MERN\Instagram\instagram\src\App.js                                  | JavaScript |         32 |          0 |          7 |         39 |
+| c:\Users\LARRIEN\Desktop\Portfolio\MERN\Instagram\instagram\src\components\CreatePopup\createPopup.js   | JavaScript |         81 |          3 |         13 |         97 |
+| c:\Users\LARRIEN\Desktop\Portfolio\MERN\Instagram\instagram\src\components\CreatePopup\popup.css        | CSS        |        156 |          0 |         26 |        182 |
+| c:\Users\LARRIEN\Desktop\Portfolio\MERN\Instagram\instagram\src\components\Explore\content.css          | CSS        |         20 |          0 |          3 |         23 |
+| c:\Users\LARRIEN\Desktop\Portfolio\MERN\Instagram\instagram\src\components\Explore\exploreContent.js    | JavaScript |          9 |          0 |          4 |         13 |
+| c:\Users\LARRIEN\Desktop\Portfolio\MERN\Instagram\instagram\src\components\Loading\loading.css          | CSS        |         16 |          0 |          1 |         17 |
+| c:\Users\LARRIEN\Desktop\Portfolio\MERN\Instagram\instagram\src\components\Loading\loading.js           | JavaScript |         10 |          0 |          4 |         14 |
+| c:\Users\LARRIEN\Desktop\Portfolio\MERN\Instagram\instagram\src\components\Message\followerContainer.js | JavaScript |         77 |          3 |         15 |         95 |
+| c:\Users\LARRIEN\Desktop\Portfolio\MERN\Instagram\instagram\src\components\Message\message.css          | CSS        |        190 |          3 |         44 |        237 |
+| c:\Users\LARRIEN\Desktop\Portfolio\MERN\Instagram\instagram\src\components\Message\messageBox.js        | JavaScript |         64 |          6 |         17 |         87 |
+| c:\Users\LARRIEN\Desktop\Portfolio\MERN\Instagram\instagram\src\components\Message\messageList.js       | JavaScript |         22 |          0 |          5 |         27 |
+| c:\Users\LARRIEN\Desktop\Portfolio\MERN\Instagram\instagram\src\components\Navigation\navigation.css    | CSS        |        162 |          3 |         32 |        197 |
+| c:\Users\LARRIEN\Desktop\Portfolio\MERN\Instagram\instagram\src\components\Navigation\navigation.js     | JavaScript |         45 |          0 |         11 |         56 |
+| c:\Users\LARRIEN\Desktop\Portfolio\MERN\Instagram\instagram\src\components\Notification\NotifList.js    | JavaScript |         16 |          0 |          3 |         19 |
+| c:\Users\LARRIEN\Desktop\Portfolio\MERN\Instagram\instagram\src\components\Notification\Notifbox.js     | JavaScript |         16 |          0 |          4 |         20 |
+| c:\Users\LARRIEN\Desktop\Portfolio\MERN\Instagram\instagram\src\components\Notification\notif.css       | CSS        |         58 |          1 |         10 |         69 |
+| c:\Users\LARRIEN\Desktop\Portfolio\MERN\Instagram\instagram\src\components\Profile\popup.css            | CSS        |         69 |          1 |         11 |         81 |
+| c:\Users\LARRIEN\Desktop\Portfolio\MERN\Instagram\instagram\src\components\Profile\posts.js             | JavaScript |         19 |          0 |          4 |         23 |
+| c:\Users\LARRIEN\Desktop\Portfolio\MERN\Instagram\instagram\src\components\Profile\profile.css          | CSS        |        317 |          4 |         60 |        381 |
+| c:\Users\LARRIEN\Desktop\Portfolio\MERN\Instagram\instagram\src\components\Profile\profileInfo.js       | JavaScript |        117 |          6 |         20 |        143 |
+| c:\Users\LARRIEN\Desktop\Portfolio\MERN\Instagram\instagram\src\components\Profile\profilePopup.js      | JavaScript |         50 |          2 |         10 |         62 |
+| c:\Users\LARRIEN\Desktop\Portfolio\MERN\Instagram\instagram\src\components\Reels\commentPopup.js        | JavaScript |         87 |          5 |         12 |        104 |
+| c:\Users\LARRIEN\Desktop\Portfolio\MERN\Instagram\instagram\src\components\Reels\content.js             | JavaScript |         27 |          0 |          7 |         34 |
+| c:\Users\LARRIEN\Desktop\Portfolio\MERN\Instagram\instagram\src\components\Reels\reels.css              | CSS        |        335 |          2 |         75 |        412 |
+| c:\Users\LARRIEN\Desktop\Portfolio\MERN\Instagram\instagram\src\components\Reels\reels.js               | JavaScript |        159 |         12 |         39 |        210 |
+| c:\Users\LARRIEN\Desktop\Portfolio\MERN\Instagram\instagram\src\components\Story\story.css              | CSS        |         52 |          0 |         13 |         65 |
+| c:\Users\LARRIEN\Desktop\Portfolio\MERN\Instagram\instagram\src\components\Story\story.js               | JavaScript |         37 |          1 |          6 |         44 |
+| c:\Users\LARRIEN\Desktop\Portfolio\MERN\Instagram\instagram\src\components\Suggestion\sugestion.css     | CSS        |        134 |          2 |         28 |        164 |
+| c:\Users\LARRIEN\Desktop\Portfolio\MERN\Instagram\instagram\src\components\Suggestion\sugestion.js      | JavaScript |         61 |          0 |         13 |         74 |
+| c:\Users\LARRIEN\Desktop\Portfolio\MERN\Instagram\instagram\src\components\comment.css                  | CSS        |         54 |          0 |         13 |         67 |
+| c:\Users\LARRIEN\Desktop\Portfolio\MERN\Instagram\instagram\src\components\comment.js                   | JavaScript |         20 |          0 |          4 |         24 |
+| c:\Users\LARRIEN\Desktop\Portfolio\MERN\Instagram\instagram\src\controller\reelsController.js           | JavaScript |          0 |          0 |          1 |          1 |
+| c:\Users\LARRIEN\Desktop\Portfolio\MERN\Instagram\instagram\src\hooks\useFetchCommets.js                | JavaScript |         24 |          1 |          9 |         34 |
+| c:\Users\LARRIEN\Desktop\Portfolio\MERN\Instagram\instagram\src\hooks\useFetchLikeDetails.js            | JavaScript |         25 |          1 |          7 |         33 |
+| c:\Users\LARRIEN\Desktop\Portfolio\MERN\Instagram\instagram\src\hooks\useFetchMessages.js               | JavaScript |         27 |          1 |          6 |         34 |
+| c:\Users\LARRIEN\Desktop\Portfolio\MERN\Instagram\instagram\src\hooks\useFetchPosts.js                  | JavaScript |         24 |          3 |          5 |         32 |
+| c:\Users\LARRIEN\Desktop\Portfolio\MERN\Instagram\instagram\src\hooks\useFetchUserInfo.js               | JavaScript |         29 |          1 |          8 |         38 |
+| c:\Users\LARRIEN\Desktop\Portfolio\MERN\Instagram\instagram\src\index.css                               | CSS        |         24 |          0 |          3 |         27 |
+| c:\Users\LARRIEN\Desktop\Portfolio\MERN\Instagram\instagram\src\index.js                                | JavaScript |         13 |          0 |          2 |         15 |
+| c:\Users\LARRIEN\Desktop\Portfolio\MERN\Instagram\instagram\src\pages\Explore\Explore.js                | JavaScript |         33 |          0 |          6 |         39 |
+| c:\Users\LARRIEN\Desktop\Portfolio\MERN\Instagram\instagram\src\pages\Explore\explore.css               | CSS        |         33 |          0 |          4 |         37 |
+| c:\Users\LARRIEN\Desktop\Portfolio\MERN\Instagram\instagram\src\pages\Home\index.js                     | JavaScript |         22 |          0 |          6 |         28 |
+| c:\Users\LARRIEN\Desktop\Portfolio\MERN\Instagram\instagram\src\pages\Login\Login.css                   | CSS        |        144 |          1 |         23 |        168 |
+| c:\Users\LARRIEN\Desktop\Portfolio\MERN\Instagram\instagram\src\pages\Login\login.js                    | JavaScript |         75 |          4 |         14 |         93 |
+| c:\Users\LARRIEN\Desktop\Portfolio\MERN\Instagram\instagram\src\pages\Messages\message.css              | CSS        |         15 |          0 |          2 |         17 |
+| c:\Users\LARRIEN\Desktop\Portfolio\MERN\Instagram\instagram\src\pages\Messages\messages.js              | JavaScript |         23 |          0 |          8 |         31 |
+| c:\Users\LARRIEN\Desktop\Portfolio\MERN\Instagram\instagram\src\pages\NotFound\notfound.css             | CSS        |         33 |          0 |          4 |         37 |
+| c:\Users\LARRIEN\Desktop\Portfolio\MERN\Instagram\instagram\src\pages\NotFound\pagenotfound.js          | JavaScript |         13 |          0 |          3 |         16 |
+| c:\Users\LARRIEN\Desktop\Portfolio\MERN\Instagram\instagram\src\pages\Profile\profile.css               | CSS        |          7 |          0 |          0 |          7 |
+| c:\Users\LARRIEN\Desktop\Portfolio\MERN\Instagram\instagram\src\pages\Profile\profile.js                | JavaScript |         17 |          1 |          6 |         24 |
+| c:\Users\LARRIEN\Desktop\Portfolio\MERN\Instagram\instagram\src\pages\Signup\signup.css                 | CSS        |        176 |          1 |         26 |        203 |
+| c:\Users\LARRIEN\Desktop\Portfolio\MERN\Instagram\instagram\src\pages\Signup\signup.js                  | JavaScript |         82 |          2 |         10 |         94 |
+| c:\Users\LARRIEN\Desktop\Portfolio\MERN\Instagram\instagram\src\simple project\canvas.js                | JavaScript |          8 |          0 |          2 |         10 |
+| c:\Users\LARRIEN\Desktop\Portfolio\MERN\Instagram\instagram\src\simple project\colorinput.js            | JavaScript |          8 |          0 |          2 |         10 |
+| c:\Users\LARRIEN\Desktop\Portfolio\MERN\Instagram\instagram\src\utils\LikedPost.js                      | JavaScript |         17 |          2 |          3 |         22 |
+| c:\Users\LARRIEN\Desktop\Portfolio\MERN\Instagram\instagram\src\utils\UnlikedPost.js                    | JavaScript |         16 |          1 |          6 |         23 |
+| c:\Users\LARRIEN\Desktop\Portfolio\MERN\Instagram\instagram\src\utils\checkAccessToken.js               | JavaScript |         10 |          1 |          3 |         14 |
+| c:\Users\LARRIEN\Desktop\Portfolio\MERN\Instagram\instagram\src\utils\comment.js                        | JavaScript |          4 |          0 |          5 |          9 |
+| c:\Users\LARRIEN\Desktop\Portfolio\MERN\Instagram\instagram\src\utils\verifyIfLike.js                   | JavaScript |         13 |          2 |          4 |         19 |
+| Total                                                                                                   |            |      3,427 |         76 |        692 |      4,195 |
++---------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+

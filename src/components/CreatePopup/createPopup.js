@@ -1,19 +1,24 @@
 import './popup.css'
-import icon from '../../assets/images/play.jpg'
+import AddPost from './AddPostContainer'
+import EditPost from './EditPostConatiner'
+import checkAccessToken from '../../utils/checkAccessToken'
 import { useState } from 'react'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 const CreatePopup = ({setShowPopup})=>{
 
     const [file, setFile] = useState(null)
     const [description, setDescription] = useState(null)
-    const [location, setLocation] = useState(null)
+    // const [location, setLocation] = useState(null)
+    const navigate = useNavigate()
 
 
     const handleFileChange =(e)=>{
         e.target.files = null
         setFile(e.target.files[0])
     }
+
 
     const sharePost = async()=>{
         //save description and image to maongodb through api
@@ -34,7 +39,12 @@ const CreatePopup = ({setShowPopup})=>{
             .then(function (response) {
               //handle success
               console.log(response);
-              setShowPopup(false)
+              const verifyAccess = checkAccessToken(response)
+              if(verifyAccess){
+                  navigate('/Login')
+              }else{
+                setShowPopup(false)
+              }
             })
             .catch(function (err) {
               //handle error
@@ -56,33 +66,11 @@ const CreatePopup = ({setShowPopup})=>{
                 <div className='inner-create-main-box'>
 
                     {(file) ?
-                        <div className='main_share_popup_image_view'>
-                            <img src={URL.createObjectURL(file)} alt='img' id='post_image_view'/>
-                            <div className='side_popup_description_area'>
-                                <div className='top_input_desc_area'>
-                                    <div className='user_profile_pic_and_name'>
-                                        <img src='' alt='profile picture'/>
-                                        <h4>Larriensaams</h4>
-                                    </div>
-                                    <form>
-                                        <input type='textarea' name='description' placeholder='Write a caption...' id='description_txtarea' onChange={(e)=>setDescription(e.target.value)}/>
-                                    </form>
-                                    <p className='wordcount'>word-count: 0/2,200</p>
-                                </div>
-                                <div className='bottom_location_input_area'>
-                                    
-                                </div>
-                            </div>
-                        </div>
+                        // edit post before submit UI
+                        <EditPost file={file} setDescription={setDescription}/>
                         :
-                        <div>
-                            <img src={icon} alt='media' id='create-media-icon'/>
-                            <h2>Drag photos and videos here</h2>
-                            <form >
-                                <label className='file_btn' for="input_post">Select from computer</label>
-                                <input name='post_image' id='input_post' type='file' onChange={(e)=>handleFileChange(e)} />
-                            </form>
-                        </div> 
+                        // add new post conatiner UI
+                       <AddPost handleFileChange={handleFileChange}/>
                     }
                     
                     
