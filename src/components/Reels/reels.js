@@ -20,7 +20,7 @@ import postComment from '../../utils/comment';
 
 const Reels =({reelposts, setPopup, setPostdata})=>{
 
-    const likesURL = 'http://localhost:5000/likes';
+    const likesURL = 'https://instagram-api-clone-0fcl.onrender.com/';
     const {response, loading, error} = useFetchLikeDetails(likesURL)
     const [liked, setLiked] = useState([]);
     const [myId, setMyId] = useState('')

@@ -24,7 +24,7 @@ const Login = () => {
     const submitLogin = async(e)=>{
         e.preventDefault()
 
-        await axios.post("https://tiny-erin-kingfisher-toga.cyclic.app/user/login",
+        await axios.post("https://instagram-api-clone-0fcl.onrender.com/user/login",
         {"email": email , "password": password},
         { headers: { 'Content-Type': 'application/json'} }
         ).then((response) => {

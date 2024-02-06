@@ -10,7 +10,7 @@ import './reels.css'
 
 const Content = () =>{
 
-    const postURL ="https://tiny-erin-kingfisher-toga.cyclic.app/posts";
+    const postURL ="https://instagram-api-clone-0fcl.onrender.com/posts";
     const {response, error, loading} = useFetchPosts(postURL)
     const [popup, setPopup] = useState(false)
     const [postdata, setPostdata] = useState([])
