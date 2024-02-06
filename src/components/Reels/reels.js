@@ -162,7 +162,7 @@ const Reels =({reelposts, setPopup, setPostdata})=>{
             {/*_________ image____________ */}
             <div className='PostImage'>
                 <img  src={TapLikeIcon}  alt='likeicon' id='taplikeicon'/>
-                <img src={"https://tiny-erin-kingfisher-toga.cyclic.app/"+reel.post_image} alt='not available' className='reelImage' onDoubleClick={()=>doubleclick(reel, myId)}/>
+                <img src={"https://instagram-api-clone-0fcl.onrender.com/"+reel.post_image} alt='not available' className='reelImage' onDoubleClick={()=>doubleclick(reel, myId)}/>
             </div>
            
             {/*_________ options, comments and likes_________ */}
