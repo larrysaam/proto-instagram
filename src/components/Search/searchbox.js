@@ -1,15 +1,11 @@
 import './search.css'
-import axios from 'axios'
 import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
-import checkAccessToken from '../../utils/checkAccessToken'
 import UserContainer from './userContainer'
 import searchUsers from '../../utils/searchUsers'
 
 const SeacrhBox =({setSearchProfile})=>{
 
     const url = `${process.env.BACKEND_URL}user/search/`
-    const [input, setInput] = useState('')
     const [users, setUsers] = useState([])
 
     useEffect(()=>{

@@ -98,6 +98,7 @@ const FollowerContainer =({setOpenMessage, setReceptor, setInitiator})=>{
                                     {/* display only name of other chat users  */}
                                     <li>{(chat.initiator === myId)? 
                                             chat.receptor_name
+                                            
                                             : 
                                             chat.initiator_name
                                         }

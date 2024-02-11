@@ -1,6 +1,6 @@
 import  instaImg from '../../assets/images/instagram logo.PNG';
 import  storeImg from '../../assets/images/stores.PNG';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './signup.css'

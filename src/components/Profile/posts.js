@@ -1,5 +1,4 @@
 import './profile.css'
-import { useState, useEffect } from 'react'
 import image from '../../assets/images/falcon_rocket.jpg'
 
 const Posts = ({postsid, saved, tagged})=>{

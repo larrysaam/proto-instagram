@@ -11,7 +11,6 @@ import smileIcon from '../../assets/images/smillIcon.PNG'
 import useFetchLikeDetails from '../../hooks/useFetchLikeDetails';
 import checkAccessTokens from '../../utils/checkAccessToken'
 import LikePost from '../../utils/LikedPost';
-import UnlikedPost from '../../utils/UnlikedPost';
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import getPostLikes from '../../utils/UnlikedPost';
@@ -47,7 +46,7 @@ const Reels =({reelposts, setPopup, setPostdata})=>{
         //get only the details of post with id (Id) from *likes* DB
         let FilteredLikes = reelposts.filter(f => f._id === Id)
         let values = FilteredLikes[0].likes
-        console.log( values)
+        
         //loop through array of users who liked th post to find name of current user.
         if(values.length>0){
             for(let i=0; i<values.length; i++){
@@ -67,14 +66,14 @@ const Reels =({reelposts, setPopup, setPostdata})=>{
 
     const update = () =>{
         if(response){
-            var arr = []
+
             reelposts.forEach(reel => {
                 var value = verifyIfLiked(reel._id, myId)
+
                 if(value){
                     var Id = reel._id
                     setLiked(liked => ([...liked, Id]))
                 }
-        
             })
         }
     }
