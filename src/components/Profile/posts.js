@@ -2,7 +2,6 @@ import './profile.css'
 import image from '../../assets/images/falcon_rocket.jpg'
 
 const Posts = ({postsid, saved, tagged})=>{
-
    
     return(
         <div className="postcontainer">
