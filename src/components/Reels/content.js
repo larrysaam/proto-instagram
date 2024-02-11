@@ -10,7 +10,7 @@ import './reels.css'
 
 const Content = () =>{
 
-    const postURL ="https://instagram-api-clone-0fcl.onrender.com/posts";
+    const postURL =`${process.env.BACKEND_URL}posts`;
     const {response, error, loading} = useFetchPosts(postURL)
     const [popup, setPopup] = useState(false)
     const [postdata, setPostdata] = useState([])

@@ -8,7 +8,7 @@ const MessageList =({setOpenMessage, setInitiator, setReceptor})=>{
         <div className="listcontainer">
             <div className="header">
                 <ul className="headerinfo">
-                    <li><h3>larriensaams</h3></li>
+                    <li><h3>{localStorage.getItem("username")}</h3></li>
                     <li><h4>Edit</h4></li>
                 </ul>
                 <ul className="secondheader">

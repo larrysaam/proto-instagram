@@ -32,7 +32,7 @@ const CreatePopup = ({setShowPopup})=>{
         bodyFormData.append('post_date', today.getMonth() + 1);
         axios({
             method: "post",
-            url: "http://localhost:5000/posts/",
+            url: `${process.env.BACKEND_URL}posts/`,
             data: bodyFormData,
             headers: { "Content-Type": "multipart/form-data" },
           })

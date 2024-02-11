@@ -5,7 +5,7 @@ const SideCommentImage = ({post_image})=>{
 
     return(
         <div className="inner-popup-image-container">
-            <img src={"http://localhost:5000/"+ post_image} alt="image" id="popup-comment-img"/>
+            <img src={`${process.env.BACKEND_URL}`+ post_image} alt="image" id="popup-comment-img"/>
         </div>
     )
 }

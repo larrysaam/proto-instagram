@@ -9,11 +9,16 @@ import axios from 'axios'
 
 const FollowerContainer =({setOpenMessage, setReceptor, setInitiator})=>{
 
-    const [data, setData] = useState([])
-    const [myId, setMyId] = useState('')
+    const token = localStorage.getItem('token');
+    const myId = localStorage.getItem("user_id")
+
+    const [chats, setChats] = useState([])
+    const [profileData, setProfileData] = useState([])
 
     const navigate = useNavigate
 
+
+    
     useEffect(()=>{
         fetchContacts()
     },[])
@@ -21,26 +26,38 @@ const FollowerContainer =({setOpenMessage, setReceptor, setInitiator})=>{
 
     // fetch all contacts with a conversation
     const fetchContacts = async()=>{
-        //get token and user_id from localstorage
-        const token = localStorage.getItem('token');
-        const user_id = localStorage.getItem("user_id")
+
         const headers = {'Content-Type': 'application/json', Authorization: `Bearer ${token}`};
-        setMyId(user_id)
         //send get request
-        await axios.get(`http://localhost:5000/message/${user_id}`,
+        await axios.get(`${process.env.BACKEND_URL}message/${myId}`,
         {headers: headers})
         .then(res=>{
             const verifyAccess = checkAccessToken(res)
             if(verifyAccess){
                 navigate('/Login')
             }else{
-                console.log(res.data.data)
-                setData(res.data.data)
+                console.log(res.data)
+                setChats(res.data.data)
             }
         })
         .catch(err=>{
             console.log(err)
         })
+    }
+
+
+    const fetchContactPhoto = async(receptor, initiator)=>{
+        var res = {}
+
+        if(initiator === myId){
+            res = await FetchUserInfo(`${process.env.BACKEND_URL}user/${receptor}`)
+        }else{
+            res = await FetchUserInfo(`${process.env.BACKEND_URL}user/${initiator}`)
+        } 
+
+        const profile_pic = `${process.env.BACKEND_URL}` + res.data.data.profile_picture
+        console.log(profile_pic)
+        return profile_pic
     }
 
 
@@ -50,9 +67,9 @@ const FollowerContainer =({setOpenMessage, setReceptor, setInitiator})=>{
         setReceptor(receptor)
 
         if(initiator === myId){
-            res =await FetchUserInfo(`http://localhost:5000/user/${receptor}`)
+            res =await FetchUserInfo(`${process.env.BACKEND_URL}user/${receptor}`)
         }else{
-            res = await FetchUserInfo(`http://localhost:5000/user/${initiator}`)
+            res = await FetchUserInfo(`${process.env.BACKEND_URL}user/${initiator}`)
         } 
         localStorage.setItem("messager_name", res.data.data.username)
         localStorage.setItem("messager_photo", res.data.data.profile_picture)
@@ -61,43 +78,29 @@ const FollowerContainer =({setOpenMessage, setReceptor, setInitiator})=>{
 
     }
 
-    const getUserName = async(id)=>{
-        const  res = await FetchUserInfo(`http://localhost:5000/user/${id}`)
-        if(res){
-            return res.data.data.username
-        }else{
-            return ""
-        }
-    }
-
 
 
     return(
         <ul className='followerlist'>
-            <li >
-                <div className="followercontainer" onClick={()=>handleClick("i", "r")}>
-                    <img src={profileimg} alt="" id="followerimg"/>
-                    <ul>
-                        <li>Larrien</li>
-                        <li className='messagestatus'>Active now</li>
-                    </ul>
-                </div>
-            </li>
-
             {/* loop through all contacts. Either message receptor or initiator */}
             {
-                (data)?
-                data.map((data)=>{
+                (chats)?
+                chats.map((chat)=>{
                     return(
                         <li >
-                            <div className="followercontainer" onClick={()=>handleClick( data._id, data.receptor, data.initiator )}>
-                                <img src={profileimg} alt="" id="followerimg"/>
+                            <div className="followercontainer" onClick={()=>handleClick( chat._id, chat.receptor, chat.initiator )}>
+                                <img
+                                    src={profileimg}
+                                    alt=""
+                                    id="followerimg"
+                                />
                                 <ul>
                                     {/* display only name of other chat users  */}
-                                    <li>{(data.initiator === myId)? 
-                                            data.receptor
+                                    <li>{(chat.initiator === myId)? 
+                                            chat.receptor_name
                                             : 
-                                            data.initiator}
+                                            chat.initiator_name
+                                        }
                                      </li>
                                     <li className='messagestatus'>Active now</li>
                                 </ul>

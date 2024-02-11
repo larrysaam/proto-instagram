@@ -8,7 +8,7 @@ import searchUsers from '../../utils/searchUsers'
 
 const SeacrhBox =({setSearchProfile})=>{
 
-    const url = 'http://localhost:5000/user/search/'
+    const url = `${process.env.BACKEND_URL}user/search/`
     const [input, setInput] = useState('')
     const [users, setUsers] = useState([])
 

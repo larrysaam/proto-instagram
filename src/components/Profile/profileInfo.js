@@ -13,7 +13,7 @@ import { useNavigate } from "react-router-dom"
 
 const ProfileInfo =({searchProfile})=>{
 
-    const url = 'http://localhost:5000/user/'
+    const url = `${process.env.BACKEND_URL}user/`
 
     const searched_id = localStorage.getItem('searched_userid')
     const Myid = localStorage.getItem('user_id')
@@ -150,7 +150,7 @@ const ProfileInfo =({searchProfile})=>{
             <div className="topDiv">
                 {/* user profile picture */}
                 <div className="profileimagediv">
-                    <img src={"http://localhost:5000/"+ profileData.profile_picture} alt='profile Image' id="profileImage" onClick={()=>setPopup(true)}/>
+                    <img src={`${process.env.BACKEND_URL}`+ profileData.profile_picture} alt='profile Image' id="profileImage" onClick={()=>setPopup(true)}/>
                 </div>
                 {/* user informations */}
                 <div className="info">

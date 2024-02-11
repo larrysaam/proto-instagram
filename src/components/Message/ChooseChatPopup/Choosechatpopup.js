@@ -5,7 +5,7 @@ import './popup.css'
 
 const ChooseChatPopup =({setOpenMessage, setChooseChatPopup})=>{
 
-    const url = 'http://localhost:5000/user/search/'
+    const url = `${process.env.BACKEND_URL}user/search/`
 
     const [users, setUsers] = useState('')
 

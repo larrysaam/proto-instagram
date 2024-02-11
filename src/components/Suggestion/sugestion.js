@@ -35,7 +35,7 @@ const Sugestion = ({profileImg, userName}) =>{
                     <li><a href="#">Meta Verified</a></li>
                 </ul>
 
-                <p> &copy; {date} INSTAGRAM FROM META</p>
+                <p> &copy; {date} INSTAGRAM FROM SAAM TECH</p>
             </div>
 
 
