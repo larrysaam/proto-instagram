@@ -24,7 +24,7 @@ const Login = () => {
     const submitLogin = async(e)=>{
         e.preventDefault()
 
-        await axios.post(`${process.env.BACKEND_URL}user/login`,
+        await axios.post(`${process.env.REACT_APP_BACKEND_URL}user/login`,
         {"email": email , "password": password},
         { headers: { 'Content-Type': 'application/json'} }
         ).then((response) => {

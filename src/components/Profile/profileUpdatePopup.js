@@ -14,7 +14,7 @@ const ProfileUpdatePopup =({setPopup, user_id})=>{
         setFile(e.target.file[0])
         var formdata = new FormData()
         formdata.append('profile_picture', file)
-        await axios.patch(`${process.env.BACKEND_URL}user/`+user_id,
+        await axios.patch(`${process.env.REACT_APP_BACKEND_URL}user/`+user_id,
         {data: formdata},
         {headers: { "Content-Type": "multipart/form-data" }}
         ).then(res=>{
@@ -29,7 +29,7 @@ const ProfileUpdatePopup =({setPopup, user_id})=>{
 
     //remove current profile pic
     const RemovePhoto = async()=>{
-        await axios.patch(`${process.env.BACKEND_URL}user/`+user_id,
+        await axios.patch(`${process.env.REACT_APP_BACKEND_URL}user/`+user_id,
         {profile_picture: ""},
         {headers: {"Content-Type": "application/json"}}
         )

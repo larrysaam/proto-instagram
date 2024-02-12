@@ -10,14 +10,14 @@ import { io } from 'socket.io-client'
 
 const MessageBox = ({openMessage, initiator, receptor, setChooseChatPopup})=>{
 
-    const url = `${process.env.BACKEND_URL}message/`
+    const url = `${process.env.REACT_APP_BACKEND_URL}message/`
     const myId = localStorage.getItem("user_id")
     const myname = localStorage.getItem("username")
     const messager_name = localStorage.getItem('messager_name')
     const messager_photo = localStorage.getItem('messager_photo')
     const message_id = localStorage.getItem('message_id')
 
-    const {response, loading, error} = useFetchMessages(`${process.env.BACKEND_URL}message/all/`+ message_id)
+    const {response, loading, error} = useFetchMessages(`${process.env.REACT_APP_BACKEND_URL}message/all/`+ message_id)
     const [messages, setMessages] = useState([])
     const [newMessage, setNewMessage] = useState([])
     const [input, setInput] = useState('')
@@ -28,7 +28,7 @@ const MessageBox = ({openMessage, initiator, receptor, setChooseChatPopup})=>{
 
     // establish connection
     useEffect(()=>{
-        const newsocket = io(`${process.env.BACKEND_URL}`)
+        const newsocket = io(`${process.env.REACT_APP_BACKEND_URL}`)
         setSocket(newsocket)
 
         return ()=>{
@@ -137,7 +137,7 @@ const MessageBox = ({openMessage, initiator, receptor, setChooseChatPopup})=>{
 
                 <div className='message_text_box_area'>
                     <div className='message_box_profile_header'>
-                        <img src={`${process.env.BACKEND_URL}`+messager_photo} alt='profile_image' className='profile_image'/>
+                        <img src={`${process.env.REACT_APP_BACKEND_URL}`+messager_photo} alt='profile_image' className='profile_image'/>
                         <h3>{messager_name}</h3>
                     </div>
 

@@ -19,7 +19,7 @@ import postComment from '../../utils/comment';
 
 const Reels =({reelposts, setPopup, setPostdata})=>{
 
-    const likesURL = `${process.env.BACKEND_URL}`;
+    const likesURL = `${process.env.REACT_APP_BACKEND_URL}`;
     const {response, loading, error} = useFetchLikeDetails(likesURL)
     const [liked, setLiked] = useState([]);
     const [myId, setMyId] = useState('')
@@ -161,7 +161,7 @@ const Reels =({reelposts, setPopup, setPostdata})=>{
             {/*_________ image____________ */}
             <div className='PostImage'>
                 <img  src={TapLikeIcon}  alt='likeicon' id='taplikeicon'/>
-                <img src={`${process.env.BACKEND_URL}`+reel.post_image} alt='not available' className='reelImage' onDoubleClick={()=>doubleclick(reel, myId)}/>
+                <img src={`${process.env.REACT_APP_BACKEND_URL}`+reel.post_image} alt='not available' className='reelImage' onDoubleClick={()=>doubleclick(reel, myId)}/>
             </div>
            
             {/*_________ options, comments and likes_________ */}

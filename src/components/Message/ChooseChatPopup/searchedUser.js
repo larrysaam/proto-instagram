@@ -3,7 +3,7 @@ import sendDM from '../../../utils/sendMessage'
 
 const SearchedUser = ({profile, username, id, setOpenMessage, setChooseChatPopup})=>{
     
-    const url = `${process.env.BACKEND_URL}message/`
+    const url = `${process.env.REACT_APP_BACKEND_URL}message/`
     const myId = localStorage.getItem("user_id")
     const myname = localStorage.getItem("username")
 
@@ -23,7 +23,7 @@ const SearchedUser = ({profile, username, id, setOpenMessage, setChooseChatPopup
     
     return(
         <div className='searched_user_profilr_box' onClick={()=>chat()}>
-            <img src={`${process.env.BACKEND_URL}`+ profile} alt='profile' className='search_prof_img'/>
+            <img src={`${process.env.REACT_APP_BACKEND_URL}`+ profile} alt='profile' className='search_prof_img'/>
             <h4 className='searched_username_h4'>{username}</h4>
         </div>
     )

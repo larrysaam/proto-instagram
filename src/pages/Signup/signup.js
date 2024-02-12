@@ -15,7 +15,7 @@ const Signup = ()=>{
     const submitForm = async(e)=>{
         e.preventDefault()
 
-        await axios.post("http://localhost:5000/user/signup",
+        await axios.post(`${process.env.REACT_APP_BACKEND_URL}user/signup`,
         {"username": username , "email": email, "password": password},
         { headers: { 'Content-Type': 'application/json'} }
         ).then((response) => {

@@ -5,7 +5,7 @@ import searchUsers from '../../utils/searchUsers'
 
 const SeacrhBox =({setSearchProfile})=>{
 
-    const url = `${process.env.BACKEND_URL}user/search/`
+    const url = `${process.env.REACT_APP_BACKEND_URL}user/search/`
     const [users, setUsers] = useState([])
 
     useEffect(()=>{

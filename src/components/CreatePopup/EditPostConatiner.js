@@ -23,7 +23,7 @@ const EditPost =({file, setDescription})=>{
 
     //get profile info
     const get_user_profile= async()=>{
-        const res = await FetchUserInfo(`${process.env.BACKEND_URL}user/${user_id}`)
+        const res = await FetchUserInfo(`${process.env.REACT_APP_BACKEND_URL}user/${user_id}`)
 
         const verifyAccess = checkAccessToken(res)
         if(verifyAccess){
@@ -43,7 +43,7 @@ const EditPost =({file, setDescription})=>{
                 <div className='top_input_desc_area'>
                     {/* __________profile info________ */}
                     <div className='user_profile_pic_and_name'>
-                        <img src={`${process.env.BACKEND_URL}${profileImg}`} alt='profile picture'/>
+                        <img src={`${process.env.REACT_APP_BACKEND_URL}${profileImg}`} alt='profile picture'/>
                         <h4>{username}</h4>
                     </div>
                     {/* __________description input field__________ */}

@@ -10,7 +10,7 @@ import './reels.css'
 
 const Content = () =>{
 
-    const postURL =`${process.env.BACKEND_URL}posts`;
+    const postURL =`${process.env.REACT_APP_BACKEND_URL}posts`;
     const {response, error, loading} = useFetchPosts(postURL)
     const [popup, setPopup] = useState(false)
     const [postdata, setPostdata] = useState([])

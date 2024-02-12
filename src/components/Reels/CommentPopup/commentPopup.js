@@ -35,7 +35,7 @@ const CommentPopup=({setPopup, postdata})=>{
         const token = localStorage.getItem('token');
         const headers = {'Content-Type': 'application/json', Authorization: `Bearer ${token}`};
 
-        await axios.patch(`${process.env.BACKEND_URL}comment`,
+        await axios.patch(`${process.env.REACT_APP_BACKEND_URL}comment`,
             { "id": postdata._id, "comment": newcomment, "comments_num": postdata.comments_num },
             { headers: headers }
         ).then((response) => {

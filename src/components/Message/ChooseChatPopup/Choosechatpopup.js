@@ -5,7 +5,7 @@ import './popup.css'
 
 const ChooseChatPopup =({setOpenMessage, setChooseChatPopup})=>{
 
-    const url = `${process.env.BACKEND_URL}user/search/`
+    const url = `${process.env.REACT_APP_BACKEND_URL}user/search/`
 
     const [users, setUsers] = useState('')
 

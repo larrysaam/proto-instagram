@@ -29,7 +29,7 @@ const FollowerContainer =({setOpenMessage, setReceptor, setInitiator})=>{
 
         const headers = {'Content-Type': 'application/json', Authorization: `Bearer ${token}`};
         //send get request
-        await axios.get(`${process.env.BACKEND_URL}message/${myId}`,
+        await axios.get(`${process.env.REACT_APP_BACKEND_URL}message/${myId}`,
         {headers: headers})
         .then(res=>{
             const verifyAccess = checkAccessToken(res)
@@ -50,12 +50,12 @@ const FollowerContainer =({setOpenMessage, setReceptor, setInitiator})=>{
         var res = {}
 
         if(initiator === myId){
-            res = await FetchUserInfo(`${process.env.BACKEND_URL}user/${receptor}`)
+            res = await FetchUserInfo(`${process.env.REACT_APP_BACKEND_URL}user/${receptor}`)
         }else{
-            res = await FetchUserInfo(`${process.env.BACKEND_URL}user/${initiator}`)
+            res = await FetchUserInfo(`${process.env.REACT_APP_BACKEND_URL}user/${initiator}`)
         } 
 
-        const profile_pic = `${process.env.BACKEND_URL}` + res.data.data.profile_picture
+        const profile_pic = `${process.env.REACT_APP_BACKEND_URL}` + res.data.data.profile_picture
         console.log(profile_pic)
         return profile_pic
     }
@@ -67,9 +67,9 @@ const FollowerContainer =({setOpenMessage, setReceptor, setInitiator})=>{
         setReceptor(receptor)
 
         if(initiator === myId){
-            res =await FetchUserInfo(`${process.env.BACKEND_URL}user/${receptor}`)
+            res =await FetchUserInfo(`${process.env.REACT_APP_BACKEND_URL}user/${receptor}`)
         }else{
-            res = await FetchUserInfo(`${process.env.BACKEND_URL}user/${initiator}`)
+            res = await FetchUserInfo(`${process.env.REACT_APP_BACKEND_URL}user/${initiator}`)
         } 
         localStorage.setItem("messager_name", res.data.data.username)
         localStorage.setItem("messager_photo", res.data.data.profile_picture)
