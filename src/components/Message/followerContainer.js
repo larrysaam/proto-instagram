@@ -1,5 +1,5 @@
 import './message.css'
-import profileimg from '../../assets/images/nasa.jpg'
+import profileimg from '../../assets/images/profilephoto.png'
 import { useEffect, useState } from 'react'
 import checkAccessToken from '../../utils/checkAccessToken'
 import FetchUserInfo from '../../utils/fetchUserInfo'
@@ -96,7 +96,7 @@ const FollowerContainer =({setOpenMessage, setReceptor, setInitiator})=>{
                                 />
                                 <ul>
                                     {/* display only name of other chat users  */}
-                                    <li>{(chat.initiator === myId)? 
+                                    <li id='chat_profile_name'>{(chat.initiator === myId)? 
                                             chat.receptor_name
                                             
                                             : 

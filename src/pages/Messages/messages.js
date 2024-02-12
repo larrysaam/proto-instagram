@@ -28,7 +28,7 @@ function Messages() {
                 :
                 ""
             }
-            <MessageList setOpenMessage={setOpenMessage} setInitiator={setInitiator} setReceptor={setReceptor}/>
+            <MessageList setOpenMessage={setOpenMessage} openMessage={openMessage} setInitiator={setInitiator} setReceptor={setReceptor}/>
             <MessageBox openMessage={openMessage} initiator={initiator} receptor={receptor} setChooseChatPopup={setChooseChatPopup}/>
         </div>
   )

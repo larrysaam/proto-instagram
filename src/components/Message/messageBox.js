@@ -2,6 +2,7 @@ import './message.css'
 import messagelogo from '../../assets/images/ig message icon.PNG'
 import useFetchMessages from '../../hooks/useFetchMessages'
 import checkAccessToken from '../../utils/checkAccessToken'
+import back_btn_icon from '../../assets/images/backarrow.jpg'
 import sendDM from '../../utils/sendMessage'
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
@@ -137,6 +138,7 @@ const MessageBox = ({openMessage, initiator, receptor, setChooseChatPopup})=>{
 
                 <div className='message_text_box_area'>
                     <div className='message_box_profile_header'>
+                        <img src={back_btn_icon} alt='back' id='back_btn' onClick={()=>{navigate('/')}}/>
                         <img src={`${process.env.REACT_APP_BACKEND_URL}`+messager_photo} alt='profile_image' className='profile_image'/>
                         <h3>{messager_name}</h3>
                     </div>

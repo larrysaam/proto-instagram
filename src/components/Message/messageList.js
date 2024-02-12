@@ -1,11 +1,11 @@
 import './message.css'
 import FollowerContainer from './followerContainer'
 
-const MessageList =({setOpenMessage, setInitiator, setReceptor})=>{
+const MessageList =({setOpenMessage, openMessage, setInitiator, setReceptor})=>{
 
 
     return(
-        <div className="listcontainer">
+        <div className={(openMessage)? "listcontainerFold" : "listcontainer"}>
             <div className="header">
                 <ul className="headerinfo">
                     <li><h3>{localStorage.getItem("username")}</h3></li>

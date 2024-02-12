@@ -165,3 +165,10 @@
     display: block;
  
 }
+
+
+@media screen and (max-width: 600px){
+    #login_side_image{
+        display: none;
+    }
+}
