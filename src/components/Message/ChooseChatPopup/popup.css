@@ -90,3 +90,19 @@
 .Choose_Chat_Popup_list ul li{
     list-style: none;
 }
+
+
+@media screen and (max-width: 600px){
+    .Choose_Chat_Popup_main{
+        height: 60%;
+        width: 80%;
+    }
+
+    .Choose_Chat_Popup_header h3{
+        font-size: 20px;
+    }
+
+    .Choose_Chat_Popup_input_box #search_bar_input{
+        min-width: 70%;
+    }
+}

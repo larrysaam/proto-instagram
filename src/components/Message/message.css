@@ -265,23 +265,18 @@
 
 
 @media screen and (max-width: 600px){
-    /* message box */
-    .mainmessagebox{
-        display: none;
-    }
 
-
-    
 
     .listcontainer{
         height: 100%;
-        width: 100%;
+        width: 9%;
         background-color: black;
         padding-right: 20px;
 
     }
 
     .listcontainer .header{
+        display: none;
         height: 10%;
     }
 
@@ -291,5 +286,21 @@
         overflow: scroll;
         margin-top: 0px;
         background-color: black;
+    }
+
+    #input_textarea_message{
+        min-width: 80%;
+    }
+
+    #send_message_btn{
+        width: 100%;
+    }
+
+    .message_message_area_container{
+        height: 85%;
+    }
+
+    .message_bottom_input_container{
+        width: 80%;
     }
 }
