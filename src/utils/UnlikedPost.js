@@ -3,7 +3,7 @@ const getPostLikes = async(postId) =>{
 
     try{
         //remove name from all those who liked post
-        const response = await fetch("http://localhost:5000/likes/"+postId,{
+        const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}likes/`+postId,{
             method: "GET",
             mode: "cors",
             headers:{
