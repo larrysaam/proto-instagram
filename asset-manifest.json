@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/proto-instagram/static/css/main.bf157e58.css",
+    "main.css": "/proto-instagram/static/css/main.e0ff6a54.css",
     "main.js": "/proto-instagram/static/js/main.a469c024.js",
     "static/media/falcon_rocket.jpg": "/proto-instagram/static/media/falcon_rocket.b9cbf546a8d8385f6ffe.jpg",
     "static/media/side image.PNG": "/proto-instagram/static/media/side image.3821c631b341196b8edd.PNG",
@@ -33,11 +33,11 @@
     "static/media/messagesicon.PNG": "/proto-instagram/static/media/messagesicon.fb5ec1fc884ed0c6cbf0.PNG",
     "static/media/icon.PNG": "/proto-instagram/static/media/icon.011c647cfd8a9b302f0b.PNG",
     "static/media/moreicon.PNG": "/proto-instagram/static/media/moreicon.e627f271587cab904176.PNG",
-    "main.bf157e58.css.map": "/proto-instagram/static/css/main.bf157e58.css.map",
+    "main.e0ff6a54.css.map": "/proto-instagram/static/css/main.e0ff6a54.css.map",
     "main.a469c024.js.map": "/proto-instagram/static/js/main.a469c024.js.map"
   },
   "entrypoints": [
-    "static/css/main.bf157e58.css",
+    "static/css/main.e0ff6a54.css",
     "static/js/main.a469c024.js"
   ]
 }
