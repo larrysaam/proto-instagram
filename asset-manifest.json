@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/proto-instagram/static/css/main.e0ff6a54.css",
-    "main.js": "/proto-instagram/static/js/main.a469c024.js",
+    "main.css": "/proto-instagram/static/css/main.76302e64.css",
+    "main.js": "/proto-instagram/static/js/main.d4f1d869.js",
     "static/media/falcon_rocket.jpg": "/proto-instagram/static/media/falcon_rocket.b9cbf546a8d8385f6ffe.jpg",
     "static/media/side image.PNG": "/proto-instagram/static/media/side image.3821c631b341196b8edd.PNG",
     "static/media/lemon.png": "/proto-instagram/static/media/lemon.a863404e4d1270ed3ee1.png",
@@ -33,11 +33,11 @@
     "static/media/messagesicon.PNG": "/proto-instagram/static/media/messagesicon.fb5ec1fc884ed0c6cbf0.PNG",
     "static/media/icon.PNG": "/proto-instagram/static/media/icon.011c647cfd8a9b302f0b.PNG",
     "static/media/moreicon.PNG": "/proto-instagram/static/media/moreicon.e627f271587cab904176.PNG",
-    "main.e0ff6a54.css.map": "/proto-instagram/static/css/main.e0ff6a54.css.map",
-    "main.a469c024.js.map": "/proto-instagram/static/js/main.a469c024.js.map"
+    "main.76302e64.css.map": "/proto-instagram/static/css/main.76302e64.css.map",
+    "main.d4f1d869.js.map": "/proto-instagram/static/js/main.d4f1d869.js.map"
   },
   "entrypoints": [
-    "static/css/main.e0ff6a54.css",
-    "static/js/main.a469c024.js"
+    "static/css/main.76302e64.css",
+    "static/js/main.d4f1d869.js"
   ]
 }
